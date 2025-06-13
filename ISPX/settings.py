@@ -110,16 +110,16 @@ WSGI_APPLICATION = 'ISPX.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'phoenixf_PhoenixFamily',  # نام دیتابیس
-        'USER': 'phoenixf_db',  # نام کاربری دیتابیس
-        'PASSWORD': 'Y^R+cB{MA1n%',  # رمز عبور دیتابیس
-        'HOST': 'localhost',  # آدرس سرور MySQL (یا آدرس دلخواه)
-        'PORT': '3306',  # پورت MySQL (پورت پیش‌فرض: 3306)
+        'NAME': 'irania19_ispx',
+        'USER': 'irania19_ispx',
+        'PASSWORD': 'RgxjCp!EdsOl',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
         'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-        },
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
     }
 }
 
