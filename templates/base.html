@@ -1,0 +1,96 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+
+<html lang="{{ LANGUAGE_CODE }}" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ seo_title|default:"IranianShiningPhoenix" }}</title>
+    <meta name="description" content="{{ seo_description }}">
+    <meta name="keywords" content="{{ seo_keywords }}">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'images/logo.jpg' %}" type="image/x-icon">
+    <link rel="canonical" href="{{ canonical_url|default:request.build_absolute_uri }}">
+    <meta property="og:title" content="{{ seo_title|default:"IranianShiningPhoenix" }}">
+    <meta property="og:description" content="{{ seo_description }}">
+    <meta property="og:image" content="{% static 'images/logo.jpg' %}">
+    <meta property="og:url" content="{{ canonical_url|default:request.build_absolute_uri }}">
+    <meta name="twitter:title" content="{{ seo_title|default:"IranianShiningPhoenix" }}">
+    <meta name="twitter:description" content="{{ seo_description }}">
+    <meta name="twitter:image" content="{% static 'images/logo.jpg' %}">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/1228ed801f.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+    </style>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "PhoenixFamily",
+    "url": "https://www.iranianshiningphoenix.com/",
+    "logo": "https://www.iranianshiningphoenix.com/static/images/logo.jpg/"
+    }
+    </script>
+
+
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-lg shadow-sm">
+        <div class="container">
+
+            <a class="navbar-brand" href="//phoenixfamily.co">
+                <img src="{{ About.logo.url }}" alt="{% trans 'Logo' %}" class="d-inline-block align-text-top">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="{% trans 'Toggle navigation' %}">
+                <i class="fa-solid fa-bars custom-toggler"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                {% block header %}
+
+                {% endblock %}
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- محتوای متغیر -->
+<div id="content">
+    {% block content %}
+    {% endblock %}
+</div>
+
+<footer>
+    <div class="container py-4">
+        {% block footer %}
+
+
+        {% endblock %}
+
+        <!-- کپی‌رایت -->
+        <div class="row mt-4">
+            <div class="col-12 text-center">
+                <p class="mb-0 copyright">
+                    &copy; 2024 PhoenixFamily. {% trans "All rights reserved." %}
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+
+</html>

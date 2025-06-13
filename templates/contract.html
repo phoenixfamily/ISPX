@@ -1,0 +1,477 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <script src="https://kit.fontawesome.com/1228ed801f.js" crossorigin="anonymous"></script>
+
+
+    <title>{% block title %}تماس با ققنوس درخشان ایرانیان{% endblock %}</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <style>
+
+
+          .logoHolder {
+              width: 100%;
+              position: absolute;
+              margin-top: 20px;
+              display: inline-flex;
+              z-index: 10 !important;
+              direction: ltr;
+              align-content: center;
+              align-items: center;
+              text-align: center;
+              justify-content: center;
+          }
+a
+          html{
+              position: relative;
+          }
+
+        .logo {
+            width: 112px;
+            height: 100px;
+            border-radius: 25px;
+        }
+
+        .footer-container{
+            background: #3054B4  ;
+            width: 100% ;
+            height: 250px;
+            position: relative;
+        }
+
+        .footer-logo {
+            height: 100% ;
+            float: right
+        }
+
+
+        .nav.navbar-nav li a {
+           cursor: pointer;
+       }
+
+        .nav.navbar-nav a:hover {
+            color: grey;
+        }
+
+
+          .dropdown-content a {
+              width: auto;
+              color: black;
+              font-size: 16px;
+              text-decoration: none;
+              display: block;
+        }
+
+
+         .dropdown-menu li a {
+            color: black ;
+             width: 100% ;
+             text-align: left;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-menu li a:hover {
+            background-color: rgba(57, 149, 225, 0.1);
+            color: black;
+        }
+
+        .container-footer {
+            float: left;
+            margin-top: 50px;
+            margin-left: 50px;
+            display: inline-grid;
+        }
+
+        .info-container div{
+            background-color: rgb(48, 84, 180);
+            height: 200px;
+            width: 200px;
+            border-radius: 100px;
+            position: absolute;
+            margin-top: -100px;
+        }
+
+          .info-container div i{
+              font-size: 72px;
+              color: white;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+              width: 100%;
+              height: 100%;
+              line-height: 72px;
+              vertical-align: center;
+              display: flex;
+
+        }
+
+          .info-container h4{
+              font-size: 24px;
+              color: white;
+              width: auto;
+              height: 50px;
+              margin-top: 120px
+
+        }
+
+             .info-container h5{
+              font-size: 20px;
+              color: white;
+              width: auto;
+              height: 50px;
+        }
+
+
+         .info div button{
+             width: 120px;
+             height: 50px;
+             stroke: none;
+        }
+
+           .selected {
+             position: relative;
+             width: 100%;
+             height: auto;
+             margin-top: 150px;
+             text-align: center;
+             justify-content: center;
+         }
+           .emailTitle{
+               position: relative;
+               width: 100%;
+               height: auto;
+               margin-top: 50px;
+               margin-bottom: 50px;
+               text-align: center;
+               justify-content: center;
+           }
+           form{
+               width: 450px;
+               height: 550px;
+               margin: 0 auto;
+               background-color: #3054B4
+
+           }
+
+           .form-group{
+               width: 400px;
+               margin: 0 auto;
+
+           }
+
+           input{
+               height: 50px;
+           }
+           input[type="file"] {
+               display: none;
+           }
+          .custom-file-upload {
+              border: 1px solid #ccc;
+              display: inline-block;
+              padding: 6px 12px;
+              text-align: center;
+              vertical-align: center;
+              justify-content: center;
+              line-height: 50px;
+              cursor: pointer;
+              font-size: 18px;
+              font-weight: bold;
+              background-color: white;
+              width: 400px;
+              margin: 25px auto 0;
+              height: 60px;
+          }
+
+          .submit{
+              margin: 30px auto 0;
+              width: 110px;
+              height: 50px;
+              font-weight: bold;
+              text-align: center;
+              justify-content: center;
+              border-color: transparent;
+              background-color: white;
+              display: block;
+          }
+
+          .hover-white:hover {color: white;}
+
+         @media screen and (max-width: 768px) {
+
+
+             .logoHolder {
+                 margin-top: 10px;
+             }
+
+             .logo {
+                 width: 62px;
+                 height: 50px;
+                 border-radius: 25px;
+             }
+
+
+             .footer-container {
+                 height: 700px;
+             }
+
+             .footer-logo {
+                 width: 100%;
+                 height: 30%;
+                 display: inline-block;
+                 justify-content: center;
+                 align-items: center;
+                 align-content: center;
+                 text-align: center;
+             }
+
+
+             .navbar .navbar-nav {
+                 display: inline-block;
+                 float: none;
+                 vertical-align: top;
+             }
+
+             .navbar .navbar-collapse {
+                 text-align: center;
+             }
+
+             .container-footer {
+                 height: 200px;
+                 margin-top: 50px;
+                 margin-left: 10px;
+                 display: inline-block;
+             }
+
+             .copy {
+                 font-size: 12px;
+             }
+
+             .selected {
+                 position: relative;
+                 width: 100%;
+                 height: auto;
+                 margin-top: 100px;
+                 text-align: center;
+                 justify-content: center;
+             }
+
+             form{
+               width: 80%;
+               height: 550px;
+               margin: 0 auto;
+
+           }
+             .form-group{
+               width: 80%;
+               margin: 0 auto;
+
+           }
+
+             .custom-file-upload {
+              width: 100%;
+              height: 60px;
+          }
+
+             .submit {
+                 margin: 30px auto 0;
+                 width: 90px;
+                 height: 45px;
+                 display: block;
+             }
+         }
+
+    </style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-light navbar-expand-lg" style="background-color: #3054B4">
+
+          <img src="{% get_media_prefix%}nav-log.png" style="width: 70px ; height: 63px" alt="logo">
+
+  <!-- Toggler/collapsibe Button -->
+    <button style="outline: none; box-shadow: none;" class="navbar-toggler justify-content-center" type="button" data-toggle="collapse" data-bs-toggle="collapse"   data-target="#collapsibleNavbar" data-bs-target="#collapsibleNavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="" role="button" ><i class="fa fa-bars" aria-hidden="true" style="color:#e6e6ff"></i></span>
+</button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+  <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" href="{% url 'home:view' %}" >Home</a>
+        </li>
+          <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Services</a>
+    <ul class="dropdown-menu">
+         {% for x in category %}
+             {% if x.type == "services" %}
+                 <li><a class="dropdown-item" href="{% url 'services:services_view' x.id %}">{{ x.name }}</a></li>
+             {% endif %}
+         {% endfor %}
+    </ul>
+  </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'product:view' %}">Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'contact:view' %}"  style="text-decoration: underline">Contact</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'about:view' %}">About</a>
+        </li>
+      </ul>
+  </div>
+</nav>
+
+<div class="logoHolder">
+
+    <img alt="" src="{% get_media_prefix%}simple-logo.png" class="logo">
+
+</div>
+
+<h3 class="selected" >Contact us</h3>
+
+
+<div class="card-group" style="margin-top: 50px ; background-color:rgba(48, 84, 180, 0.7)!important ">
+    <div class="card" style="background-color: transparent ; justify-content: center ; align-self: center  ; align-content: center ; align-items: center ; text-align: center ; border: none">
+        <img src="{% get_media_prefix %}email.png" class="card-img-top" alt="email" style="height: 200px ; width: 200px ; margin-top: 15px" />
+        <div class="card-body" style="color: white">
+            <h5 class="card-title">Email</h5>
+             <p class="card-text">info@iranianshiningphoenix.com</p>
+        </div>
+    </div>
+    <div class="card mx-auto justify-content-center" style="background-color: transparent ; justify-content: center ; align-self: center  ; align-content: center ; align-items: center ; text-align: center ; border: none">
+        <img src="{% get_media_prefix %}telegram.png" class="card-img-top" alt="telegram" style="height: 200px ; width: 200px ;  margin-top: 15px" />
+        <div class="card-body" style="color: white">
+            <h5 class="card-title">Telegram</h5>
+            <a class="card-text" style="color: white" href="https://t.me/iranianshiningphoenix">@iranianshiningphoenix</a>
+        </div>
+    </div>
+    <div class="card mx-auto justify-content-center" style="background-color: transparent ; justify-content: center ; align-self: center  ; align-content: center ; align-items: center ; text-align: center ; border: none">
+        <img src="{% get_media_prefix %}whatsapp.png" class="card-img-top" alt="whatsapp" style="height: 200px ; width: 200px ;  margin-top: 15px" />
+        <div class="card-body" style="color: white">
+            <h5 class="card-title">Whatsapp</h5>
+            <a class="card-text" href="https://wa.link/fqc18m" style="color: white">+447377002350</a>
+        </div>
+    </div>
+</div>
+
+<h3 class="emailTitle" >Email us</h3>
+
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="name"></label>
+        <input name="name" type="text" class="form-control" id="name" placeholder="Name . . ." required>
+    </div>
+    <div class="form-group">
+        <label for="phone"></label>
+        <input name="phone" type="tel" class="form-control" id="phone" placeholder="Number . . ." required>
+    </div>
+    <div class="form-group">
+        <label for="email"></label>
+        <input name="email" type="email" class="form-control" id="email" placeholder="name@example.com" required>
+    </div>
+    <div class="form-group">
+        <label for="message"></label>
+        <textarea name="message" class="form-control" id="message" rows="4" placeholder="Message . . ." required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlFile1" class="custom-file-upload">
+            <i class="fa-solid fa-upload"></i> Upload
+        </label>
+        <input name="file" type="file" id="exampleFormControlFile1" class="form-control">
+    </div>
+    <button class="submit" type="submit">Send</button>
+</form>
+
+
+
+<footer style="margin-top: 100px ; width: 100%">
+
+    <div class="footer-container">
+
+        <div class="footer-logo">
+            <img class="img-responsive" style="width: 256px ; height: 210px ; margin-top: 40px"  src="{% get_media_prefix%}nav-log.png"
+                 alt="">
+        </div>
+
+        <div class="container-footer">
+            <div style="display: inline-flex ; direction: ltr">
+                 <i class="fa-regular fa-envelope"
+                   style="color: #ffffff; font-size: 30px">
+                     </i>
+        <h5 style="color:white ; margin-left: 5px">
+            info@iranianshiningphoenix.com
+        </h5>
+            </div>
+
+             <div style="display: inline-flex ; direction: ltr ; margin-top: 20px">
+                 <i class="fa-brands fa-telegram"
+                   style="color: #ffffff; font-size: 30px"></i>
+        <h5 style="color:white ; margin-left: 5px">
+            @iranianshiningphoenix
+        </h5>
+            </div>
+
+                <div style="display: inline-flex ; direction: ltr ; margin-top: 20px">
+                 <i class="fa-brands fa-whatsapp"
+                   style="color: #ffffff; font-size: 30px"></i>
+        <h5 style="color:white ; margin-left: 5px">
+            +447377002350
+        </h5>
+            </div>
+
+        </div>
+    </div>
+
+  <!-- Copyright -->
+ <div class="p-3 copy" style="background: #142657 ; color: #B1B2B2">&copy;<span id="year"
+                                    style="font-family: Cambria, 'Hoefler Text', 'Liberation Serif', Times, 'Times New Roman', 'serif'">2024</span><a href="https://phoenixfamily.co/" style="color: #B1B2B2 ; text-decoration: none"> PhoenixFamily. All rights reserved.</a>
+        <a href="//www.instagram.com/phoenixfamily.co?igsh=ZzRpb2owOHdnMWd5"
+           style="right: 0 ; position: absolute ; margin-right:15px">
+            <i class="fa-brands fa-instagram" style="color: #ffffff ; font-size: 30px"></i>
+        </a>
+        <a href="//linkedin.com/company/phoenixfamily" style="right: 0 ; position: absolute ; margin-right:55px">
+            <i class="fa-brands fa-linkedin" style="color: #ffffff ; font-size: 30px"></i>
+        </a>
+        <span style=" float:right ;right: 0;margin-right: 80px ; position: relative">Follow us:</span>
+    </div>
+  <!-- Copyright -->
+</footer>
+
+
+<script>
+    document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    let formData = new FormData(this);
+
+    fetch("{% url 'contact:email' %}", {
+        method: "POST",
+        body: formData,
+        headers: {
+            "X-CSRFToken": "{{ csrf_token }}"
+        },
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message) {
+                alert(data.message);
+            } else {
+                alert("Error: " + JSON.stringify(data.error));
+            }
+        })
+        .catch(error => console.error("Error:", error));
+});
+
+</script>
+
+</body>
+</html>
