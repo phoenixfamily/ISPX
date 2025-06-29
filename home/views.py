@@ -1,6 +1,5 @@
 from django.http import HttpResponse
-from django.views.decorators.cache import cache_page
-from rest_framework import generics
+
 
 from category.models import Category
 from .models import Slider, CEO
