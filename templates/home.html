@@ -458,29 +458,32 @@
 
 
 <script>
-
-    document.querySelector("form").addEventListener("submit", function (e) {
+document.querySelector("form").addEventListener("submit", function (e) {
     e.preventDefault();
-    let formData = new FormData(this);
+    let form = this;
+    let formData = new FormData(form);
+    let csrfToken = form.querySelector('[name=csrfmiddlewaretoken]').value;
 
     fetch("{% url 'home:cooperation' %}", {
         method: "POST",
         body: formData,
         headers: {
-            "X-CSRFToken": "{{ csrf_token }}"
+            "X-CSRFToken": csrfToken
         },
     })
-        .then(response => response.json())
-        .then(data => {
-            if (data.message) {
-                alert(data.message);
-            } else {
-                alert("Error: " + JSON.stringify(data.error));
-            }
-        })
-        .catch(error => console.error("Error:", error));
+    .then(response => response.json())
+    .then(data => {
+        if (data.message) {
+            alert(data.message);
+            form.reset(); // فرم پاک بشه بعد ارسال موفق
+        } else if (data.errors) {
+            alert("Form Errors: " + JSON.stringify(data.errors));
+        } else {
+            alert("Error: " + JSON.stringify(data.error));
+        }
+    })
+    .catch(error => console.error("Error:", error));
 });
-
 </script>
 
 
