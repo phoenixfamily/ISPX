@@ -378,56 +378,57 @@
     </div>
 </div>
 
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-
-    <div class="mb-3">
-        <label for="acType" class="form-label">A/C TYPE</label>
+<div class="form-container">
+    <h2 class="form-title">Cooperation Request</h2>
+    <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+        <div class="mb-3">
+            <label for="acType" class="form-label">A/C TYPE</label>
         <input type="text" class="form-control" id="acType" name="ac_type" required>
-    </div>
+        </div>
 
-    <div class="mb-3">
-        <label for="date" class="form-label">DATE</label>
+        <div class="mb-3">
+            <label for="date" class="form-label">DATE</label>
         <input type="date" class="form-control" id="date" name="date" required>
-    </div>
+        </div>
 
-    <div class="mb-3">
-        <label for="acReg" class="form-label">A/C REG</label>
+        <div class="mb-3">
+            <label for="acReg" class="form-label">A/C REG</label>
         <input type="tel" class="form-control" id="acReg" name="ac_reg" required>
-    </div>
+        </div>
 
-    <div class="mb-3">
-        <label for="station" class="form-label">STATION</label>
+        <div class="mb-3">
+            <label for="station" class="form-label">STATION</label>
         <input type="text" class="form-control" id="station" name="station">
-    </div>
+        </div>
 
-    <div class="mb-3">
-        <label for="time" class="form-label">TIME</label>
+        <div class="mb-3">
+            <label for="time" class="form-label">TIME</label>
         <input type="time" class="form-control" id="time" name="time">
-    </div>
+        </div>
 
-    <div class="mb-3">
-        <label for="customer" class="form-label">CUSTOMER</label>
+        <div class="mb-3">
+            <label for="customer" class="form-label">CUSTOMER</label>
         <input type="text" class="form-control" id="customer" name="customer">
-    </div>
+        </div>
 
-    <div class="mb-3">
-        <label class="form-label">TASK REQUESTED</label><br>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="task_cabin" value="on" id="taskCabin">
+        <div class="mb-3">
+            <label class="form-label">TASK REQUESTED</label><br>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="task_cabin" value="on" id="taskCabin">
             <label class="form-check-label" for="taskCabin">CABIN DEEP CLEANING</label>
-        </div>
-        <div class="form-check">
+            </div>
+            <div class="form-check">
             <input class="form-check-input" type="checkbox" name="task_exterior" value="on" id="taskExterior">
-            <label class="form-check-label" for="taskExterior">EXTERIOR CLEANING</label>
+                <label class="form-check-label" for="taskExterior">EXTERIOR CLEANING</label>
+            </div>
         </div>
-    </div>
 
-    <div class="d-grid">
-        <button type="submit" class="btn btn-primary btn-lg">Send</button>
-    </div>
-</form>
-
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary btn-lg">Send</button>
+        </div>
+    </form>
+</div>
 
          {% endblock %}
 
