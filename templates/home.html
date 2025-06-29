@@ -380,7 +380,7 @@
 
 <div class="form-container">
     <h2 class="form-title">Cooperation Request</h2>
-    <form>
+    <form method="post" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="acType" class="form-label">A/C TYPE</label>
             <input type="text" class="form-control" id="acType" required>
@@ -455,6 +455,32 @@
 </div>
 {% endblock %}
 
+
+<script>
+
+    document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    let formData = new FormData(this);
+
+    fetch("{% url 'home:cooperation' %}", {
+        method: "POST",
+        body: formData,
+        headers: {
+            "X-CSRFToken": "{{ csrf_token }}"
+        },
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message) {
+                alert(data.message);
+            } else {
+                alert("Error: " + JSON.stringify(data.error));
+            }
+        })
+        .catch(error => console.error("Error:", error));
+});
+
+</script>
 
 
 
