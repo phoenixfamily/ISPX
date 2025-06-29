@@ -4,21 +4,26 @@
 
 <html lang="{{ LANGUAGE_CODE }}" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}">
 <head>
+
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ seo_title|default:"IranianShiningPhoenix" }}</title>
+    <title>{{ seo_title }}</title>
     <meta name="description" content="{{ seo_description }}">
     <meta name="keywords" content="{{ seo_keywords }}">
     <meta name="robots" content="index, follow">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="icon" href="{% static 'images/logo.jpg' %}" type="image/x-icon">
-    <link rel="canonical" href="{{ canonical_url|default:request.build_absolute_uri }}">
-    <meta property="og:title" content="{{ seo_title|default:"IranianShiningPhoenix" }}">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <meta property="og:title" content="{{ seo_title }}">
     <meta property="og:description" content="{{ seo_description }}">
     <meta property="og:image" content="{% static 'images/logo.jpg' %}">
-    <meta property="og:url" content="{{ canonical_url|default:request.build_absolute_uri }}">
-    <meta name="twitter:title" content="{{ seo_title|default:"IranianShiningPhoenix" }}">
+    <meta property="og:url" content="{{ canonical_url }}">
+    <meta name="twitter:title" content="{{ seo_title }}">
     <meta name="twitter:description" content="{{ seo_description }}">
     <meta name="twitter:image" content="{% static 'images/logo.jpg' %}">
 
@@ -32,37 +37,42 @@
     </style>
 
     <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "PhoenixFamily",
-    "url": "https://www.iranianshiningphoenix.com/",
-    "logo": "https://www.iranianshiningphoenix.com/static/images/logo.jpg/"
-    }
+        {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "IranianShiningPhoenix",
+        "url": "https://www.iranianshiningphoenix.com/",
+        "logo": "https://www.iranianshiningphoenix.com/static/images/logo.jpg/"
+        }
     </script>
 
 
 </head>
 <body>
 
+
 <header>
-    <nav class="navbar navbar-expand-lg shadow-sm">
-        <div class="container">
+   <nav class="navbar navbar-light navbar-expand-lg">
 
-            <a class="navbar-brand" href="//phoenixfamily.co">
+    <a class="navbar-brand" href="//iranianshiningphoenix.com">
                 <img src="{{ About.logo.url }}" alt="{% trans 'Logo' %}" class="d-inline-block align-text-top">
-            </a>
+    </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="{% trans 'Toggle navigation' %}">
-                <i class="fa-solid fa-bars custom-toggler"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+    <!-- Toggler/collapsibe Button -->
+    <button style="outline: none; box-shadow: none;" class="navbar-toggler justify-content-center" type="button"
+            data-toggle="collapse" data-bs-toggle="collapse" data-target="#collapsibleNavbar"
+            data-bs-target="#collapsibleNavbar" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="" role="button"><i class="fa fa-bars" aria-hidden="true" style="color:#e6e6ff"></i></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
                 {% block header %}
 
                 {% endblock %}
-            </div>
-        </div>
+    </div>
+</nav>
     </nav>
 </header>
 

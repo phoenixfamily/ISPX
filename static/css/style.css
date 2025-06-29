@@ -1,0 +1,417 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --navbar-bg: #3054B4;
+    --navbar-border: #3054B4;
+    --nav-link-color: #000000;
+    --nav-link-hover: #3054B4;
+    --btn-bg: #3054B4;
+    --btn-hover: #ff6659;
+    --btn-text: #000;
+    --primary-light: #3054B4; /* قرمز لوگو */
+    --primary-dark: #333;
+    --toggle-bg-light: var(--primary-light);
+    --toggle-bg-dark: #444;
+    --text-color-muted: #262626; /* رنگ خاکستری مشابه text-muted */
+    --navbar-toggler-border-color: #ccc; /* رنگ حاشیه برای حالت لایت */
+    --navbar-toggler-bg-color: #fff; /* رنگ پس‌زمینه برای حالت لایت */
+    --navbar-toggler-icon-color: #333; /* رنگ ایکون برای حالت لایت */
+}
+
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --navbar-bg: #3054B4;
+    --navbar-border: #3054B4;
+    --nav-link-color: #e0e0e0;
+    --nav-link-hover: #3054B4;
+    --btn-bg: #3054B4;
+    --btn-hover: #ff6659;
+    --btn-text: #ffffff;
+    --text-color-muted: #e1e1e1; /* رنگ خاکستری روشن‌تر برای حالت دارک */
+    --navbar-toggler-border-color-dark: #666; /* رنگ حاشیه برای حالت دارک */
+    --navbar-toggler-bg-color-dark: #333; /* رنگ پس‌زمینه برای حالت دارک */
+    --navbar-toggler-icon-color-dark: #fff; /* رنگ ایکون برای حالت دارک */
+}
+
+.logoHolder {
+    width: 100%;
+    position: absolute;
+    margin-top: 20px;
+    display: inline-flex;
+    z-index: 10 !important;
+    direction: ltr;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+
+.logo {
+    width: 112px;
+    height: 100px;
+    border-radius: 25px;
+}
+
+.selected {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    text-align: center;
+    justify-content: center;
+}
+
+.article {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.img-seo {
+    height: auto;
+    width: 50%;
+}
+
+.left-seo {
+    float: left;
+    display: inline-flex;
+    margin-top: 30px;
+}
+
+.col {
+    width: 30%;
+    height: auto;
+    margin-left: 5px;
+    background-color: #3054B4;
+    border-color: transparent;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.row {
+    margin-top: 5px;
+}
+
+.container {
+    width: 50%;
+    margin-top: 30px;
+    vertical-align: center;
+    justify-items: center;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+}
+
+.footer-container {
+    background: #3054B4;
+    width: 100%;
+    height: 250px;
+    position: relative;
+}
+
+.footer-logo {
+    height: 100%;
+    float: right
+}
+
+
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* حالت دارک */
+body.dark-mode {
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+.text-mute{
+    color: var(--text-color-muted) !important;
+}
+.navbar {
+    background-color: var(--navbar-bg);
+    border-bottom: 2px solid var(--navbar-border);
+}
+
+.nav-link {
+    color: var(--nav-link-color)!important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--nav-link-hover) !important;
+}
+
+.nav-link.active {
+    color: var(--nav-link-hover) !important;
+    text-decoration: underline;
+    text-decoration-color: var(--nav-link-hover);
+    text-underline-offset: 5px;
+}
+
+.nav.navbar-nav li a {
+    cursor: pointer;
+}
+
+.nav.navbar-nav a:hover {
+    color: grey;
+}
+
+
+.dropdown-content a {
+    width: auto;
+    color: black;
+    font-size: 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+.dropdown-menu li a {
+    color: black;
+    width: 100%;
+    text-align: left;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-menu li a:hover {
+    background-color: rgba(57, 149, 225, 0.1);
+    color: black;
+}
+
+.container-footer {
+    float: left;
+    margin-top: 50px;
+    margin-left: 50px;
+    display: inline-grid;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    height: 50px;
+    width: 50px;
+    background-color: rgba(0, 0, 0, 0.6);
+
+}
+
+
+.carousel-inner {
+    height: 500px;
+}
+
+.seo {
+    margin-top: 30px;
+}
+
+.card img {
+    height: 50%;
+}
+
+.card-footer {
+    color: #3054B4;
+}
+
+.card-footer a {
+    width: 100%;
+    height: 100%;
+    line-height: 100%;
+    vertical-align: center;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.notification {
+    background-color: #32CD32; /* سبز ملایم */
+    color: white;
+    width: 100%;
+    height: 40px; /* ارتفاع مشخص */
+    display: flex; /* فعال‌سازی فلکس‌باکس */
+    justify-content: center; /* متن وسط */
+    align-items: center; /* عناصر در محور عمودی وسط */
+    position: relative; /* برای قرارگیری آیکون در سمت راست */
+    font-size: 16px; /* اندازه متن */
+    box-sizing: border-box; /* لحاظ کردن padding در عرض */
+    padding: 0 50px; /* فاصله برای جلوگیری از روی هم افتادن متن و آیکون */
+}
+
+.notification i {
+    position: absolute; /* آیکون خارج از جریان معمول قرار می‌گیرد */
+    right: 15px; /* فاصله آیکون از سمت راست */
+    cursor: pointer; /* اشاره‌گر نشان‌دهنده قابلیت کلیک */
+    font-size: 18px; /* اندازه مناسب آیکون */
+}
+
+
+.form-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #0d6efd;
+}
+
+@media (min-width: 576px) {
+    .card-group.card-group-scroll {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+}
+
+.card-group.card-group-scroll > .card {
+    flex-basis: 35%;
+}
+
+@media screen and (max-width: 768px) {
+
+    .left-seo {
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    .img-seo {
+        height: auto;
+        width: 100%;
+    }
+
+
+    .logoHolder {
+        margin-top: 10px;
+    }
+
+    .logo {
+        width: 62px;
+        height: 50px;
+        border-radius: 25px;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .col {
+        width: 30%;
+        height: auto;
+        margin-left: 5px;
+        background-color: #3054B4;
+        border-color: transparent;
+        border-radius: 5px;
+        color: white;
+        font-size: 12px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        vertical-align: middle;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .footer-container {
+        height: 700px;
+    }
+
+    .footer-logo {
+        width: 100%;
+        height: 30%;
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+    }
+
+
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+
+    .container-footer {
+        height: 200px;
+        margin-top: 30px;
+        margin-left: 10px;
+        display: inline-block;
+    }
+
+    .copy {
+        font-size: 12px;
+    }
+
+    .carousel-inner {
+        height: auto;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        height: 30px;
+        width: 30px;
+
+    }
+
+    .container {
+        margin-top: 20px;
+
+    }
+
+    .seo {
+        margin-top: 15px;
+    }
+
+    .selected {
+        margin-top: 30px;
+    }
+
+    .notification {
+        background-color: #32CD32;
+        color: white;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 5px 10px 5px; /* تنظیم فاصله داخلی: بالا، چپ/راست، پایین */
+        font-size: 16px;
+    }
+
+    .notification i {
+        position: static; /* آیکون خارج از جریان معمول قرار می‌گیرد */
+        font-size: 18px; /* اندازه مناسب آیکون */
+    }
+}
