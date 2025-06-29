@@ -13,7 +13,6 @@ from rest_framework import status
 from ISPX.permissions import IsSuperUser
 
 
-@cache_page(60 * 15)
 def home_view(request):
     template = loader.get_template('home.html')
     category = Category.objects.all()
