@@ -381,6 +381,7 @@
 <div class="form-container">
     <h2 class="form-title">Cooperation Request</h2>
     <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
         <div class="mb-3">
             <label for="acType" class="form-label">A/C TYPE</label>
             <input type="text" class="form-control" id="acType" required>
