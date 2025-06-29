@@ -161,11 +161,11 @@ body.dark-mode {
 }
 
 .nav-link:hover {
-    color: var(--nav-link-hover) !important;
+    color: grey;
 }
 
 .nav-link.active {
-    color: black !important;
+    text-decoration: underline;
 }
 
 .nav.navbar-nav li a {
