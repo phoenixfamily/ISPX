@@ -15,7 +15,7 @@ router.register(r'CEO', CeoViewSet)
 urlpatterns = [
     path("", home_view, name='view'),
     path("api/", include(router.urls)),
-    path('cooperation/', cooperation_request_view, name='cooperation_request'),
+    path("cooperation/", CooperationRequestView.as_view(), name='cooperation'),
 
 ]
 

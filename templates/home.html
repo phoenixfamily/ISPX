@@ -463,7 +463,7 @@
     e.preventDefault();
     let formData = new FormData(this);
 
-    fetch("{% url 'home:cooperation_request' %}", {
+    fetch("{% url 'home:cooperation' %}", {
         method: "POST",
         body: formData,
         headers: {

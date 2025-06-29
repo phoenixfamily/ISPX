@@ -63,32 +63,48 @@ class CeoViewSet(viewsets.ModelViewSet):
 #     serializer_class = CeoSerializer
 
 
-from django.shortcuts import render
-from django.core.mail import EmailMessage
-from django.http import HttpResponse
-from .forms import CooperationRequestForm
-
-def cooperation_request_view(request):
-    if request.method == 'POST':
-        form = CooperationRequestForm(request.POST, request.FILES)
+class CooperationRequestView(APIView):
+    def post(self, request, *args, **kwargs):
+        form = CooperationRequestForm(request.data, request.FILES)
         if form.is_valid():
-            # ایمیل ساختن و ارسال همونطوری که قبلاً گفتیم
-            email_subject = "New Cooperation Request"
-            email_body = "\n".join([f"{field.label}: {form.cleaned_data.get(field.name)}" for field in form])
+            ac_type = form.cleaned_data['ac_type']
+            date = form.cleaned_data['date']
+            ac_reg = form.cleaned_data['ac_reg']
+            station = form.cleaned_data.get('station', '')
+            time = form.cleaned_data.get('time', '')
+            customer = form.cleaned_data.get('customer', '')
+            task_cabin = form.cleaned_data['task_cabin']
+            task_exterior = form.cleaned_data['task_exterior']
+
+            # Subject and body
+            email_subject = f"[Cooperation Request] A/C: {ac_type} - {ac_reg}"
+            email_body = (
+                f"A/C Type: {ac_type}\n"
+                f"Date: {date}\n"
+                f"A/C Registration: {ac_reg}\n"
+                f"Station: {station}\n"
+                f"Time: {time}\n"
+                f"Customer: {customer}\n"
+                f"Cabin Deep Cleaning: {'Yes' if task_cabin else 'No'}\n"
+                f"Exterior Cleaning: {'Yes' if task_exterior else 'No'}\n"
+            )
 
             email = EmailMessage(
-                email_subject,
-                email_body,
-                'customer@iranianshiningphoenix.com',
-                ['ceo@iranianshiningphoenix.com'],
+                subject=email_subject,
+                body=email_body,
+                from_email='customer@iranianshiningphoenix.com',  # فرستنده
+                to=['ceo@iranianshiningphoenix.com'],  # گیرنده
             )
-            email.send()
 
-            return HttpResponse("Success")
+            # اگر فایلی هم اضافه شد
+            file = request.FILES.get('file')
+            if file:
+                email.attach(file.name, file.read(), file.content_type)
+
+            try:
+                email.send()
+                return Response({"message": "Cooperation request submitted successfully."}, status=200)
+            except Exception as e:
+                return Response({"error": f"Error sending email: {str(e)}"}, status=500)
         else:
-            return HttpResponse("Invalid form", status=400)
-
-    else:
-        form = CooperationRequestForm()
-    return render(request, 'cooperation_form.html', {'form': form})
-.errors}, status=400)
+            return Response({"errors": form.errors}, status=400)
