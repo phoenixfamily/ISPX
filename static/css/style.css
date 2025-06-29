@@ -156,7 +156,7 @@ body.dark-mode {
 }
 
 .nav-link {
-    color: var(--nav-link-color)!important;
+    text-decoration: underline;
     transition: color 0.3s ease;
 }
 
@@ -165,10 +165,7 @@ body.dark-mode {
 }
 
 .nav-link.active {
-    color: var(--nav-link-hover) !important;
-    text-decoration: underline;
-    text-decoration-color: var(--nav-link-hover);
-    text-underline-offset: 5px;
+    color: black !important;
 }
 
 .nav.navbar-nav li a {
