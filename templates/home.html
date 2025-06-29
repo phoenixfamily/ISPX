@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title></title>
 </head>
 <body>
 
@@ -38,6 +39,8 @@
     </ul>
 
 {% endblock %}
+
+ {% block content %}
 
 <div class="logoHolder">
 
@@ -425,9 +428,12 @@
     </form>
 </div>
 
+         {% endblock %}
 
-<footer style="margin-top: 100px ; width: 100%">
 
+{% block footer %}
+
+{% endblock %}
     <div class="footer-container">
 
         <div class="footer-logo">
@@ -465,22 +471,9 @@
         </div>
     </div>
 
-    <!-- Copyright -->
-    <div class="p-3 copy" style="background: #142657 ; color: #B1B2B2">&copy;<span id="year"
-                                                                                   style="font-family: Cambria, 'Hoefler Text', 'Liberation Serif', Times, 'Times New Roman', 'serif'">2024</span><a
-            href="https://phoenixfamily.co/" style="color: #B1B2B2 ; text-decoration: none"> PhoenixFamily. All rights
-        reserved.</a>
-        <a href="//www.instagram.com/phoenixfamily.co?igsh=ZzRpb2owOHdnMWd5"
-           style="right: 0 ; position: absolute ; margin-right:15px">
-            <i class="fa-brands fa-instagram" style="color: #ffffff ; font-size: 30px"></i>
-        </a>
-        <a href="//linkedin.com/company/phoenixfamily" style="right: 0 ; position: absolute ; margin-right:55px">
-            <i class="fa-brands fa-linkedin" style="color: #ffffff ; font-size: 30px"></i>
-        </a>
-        <span style=" float:right ;right: 0;margin-right: 80px ; position: relative">Follow us:</span>
-    </div>
-    <!-- Copyright -->
-</footer>
+{% endblock %}
+
+
 
 </body>
 </html>

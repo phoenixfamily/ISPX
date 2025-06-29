@@ -147,7 +147,7 @@ body.dark-mode {
     color: var(--text-color-muted) !important;
 }
 .navbar {
-    background-color: var(--navbar-bg);
+    background-color: var(--navbar-bg)!important;
     border-bottom: 2px solid var(--navbar-border);
 }
 
