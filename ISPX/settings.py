@@ -110,16 +110,13 @@ WSGI_APPLICATION = 'ISPX.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'irania19_ispx',
-        'USER': 'irania19_ispx',
-        'PASSWORD': 'RgxjCp!EdsOl',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('iranianshiningphoenix'),
+        'USER': os.getenv('admin'),
+        'PASSWORD': os.getenv('YDdWWEMkkcIQi6pK'),
+        'HOST': os.getenv('localhost'),
+        'PORT': os.getenv('5432'),
     }
 }
 
@@ -213,23 +210,22 @@ USE_TZ = True
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+# برای ترجمه‌ها
 LOCALE_PATHS = [
-    BASE_DIR / 'locale',  # مسیر پوشه‌ی locale
+    BASE_DIR / 'locale',
 ]
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.2/howto/static-files/
-
-STATIC_ROOT = '/home/irania19/public_html/static/'
+# فایل‌های استاتیک (CSS, JS, Images)
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # اینجا جمع می‌کنه collectstatic
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),  # اگر فایل استاتیکی دارید که در مسیر پروژه هستند.
+    BASE_DIR / 'static',  # فایل‌های custom داخل پروژه
 ]
 
-MEDIA_ROOT = '/home/irania19/public_html/media/'
+# فایل‌های رسانه‌ای که کاربر آپلود می‌کنه
 MEDIA_URL = '/media/'
-
+MEDIA_ROOT = BASE_DIR / 'media'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
