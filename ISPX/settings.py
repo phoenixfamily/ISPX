@@ -120,8 +120,8 @@ DATABASES = {
         'NAME': os.getenv('iranianshiningphoenix'),
         'USER': os.getenv('admin'),
         'PASSWORD': os.getenv('YDdWWEMkkcIQi6pK'),
-        'HOST': os.getenv('localhost'),
-        'PORT': os.getenv('5432'),
+        'HOST': os.getenv("DB_HOST", "localhost"),
+        'PORT': os.getenv("DB_PORT", "5432"),
     }
 }
 
