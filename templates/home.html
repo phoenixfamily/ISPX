@@ -192,14 +192,13 @@
             </div>
         </div>
     </section>
-
-  <section class="dry-wash-section py-5">
+<section class="dry-wash-section py-5">
   <div class="container">
     <h3 class="section-title text-center mb-5">WHY AIRCRAFT DRY WASH?</h3>
-    <div class="row align-items-center">
+    <div class="row align-items-stretch">
       <!-- متن اصلی داخل کارت -->
-      <div class="col-md-6">
-        <div class="text-card p-4 shadow-sm rounded bg-white">
+      <div class="col-md-6 h-100">
+        <div class="text-card p-4 shadow-sm rounded bg-white h-100 d-flex flex-column justify-content-center">
           <p class="dry-wash-text">
             During each flight, an aircraft accumulates <strong class="highlight">dust and grime</strong> on its exterior. This not only makes the aircraft look dirty but also increases <strong class="highlight">fuel consumption</strong> due to added weight and reduced aerodynamics. Traditionally, aircraft are cleaned several times a year using high-pressure water, consuming over <strong class="highlight">11,300 liters</strong> for an Airbus A380 and <strong class="highlight">9,500 liters</strong> for a Boeing 777 per wash.
           </p>
@@ -209,22 +208,20 @@
         </div>
       </div>
 
-      <!-- باکس فواید Dry Wash -->
-      <div class="col-md-3">
+      <!-- سمت راست: عکس و باکس فواید زیر هم -->
+      <div class="col-md-6 d-flex flex-column justify-content-between h-100">
+        <div class="mb-4">
+          <img src="{% static 'images/aircraft-detailing.webp' %}" alt="Aircraft Dry Wash" class="img-fluid rounded shadow" style="max-height: 48vh; width: 100%; object-fit: cover;">
+        </div>
         <div class="benefits-box p-4 shadow-sm rounded bg-white">
           <h5 class="benefits-title mb-4">Key Benefits</h5>
-          <ul class="benefits-list list-unstyled">
+          <ul class="benefits-list list-unstyled mb-0">
             <li><i class="fa fa-tint text-primary me-2"></i>Water Saving</li>
             <li><i class="fa fa-leaf text-success me-2"></i>Eco-Friendly</li>
             <li><i class="fa fa-wallet text-warning me-2"></i>Cost Effective</li>
             <li><i class="fa fa-shield-alt text-info me-2"></i>Prevents Corrosion</li>
           </ul>
         </div>
-      </div>
-
-      <!-- عکس سمت راست -->
-      <div class="col-md-3 text-center">
-        <img src="{% static 'images/aircraft-detailing.webp' %}" alt="Aircraft Dry Wash" class="img-fluid rounded shadow" style="max-height: 250px;">
       </div>
     </div>
   </div>
