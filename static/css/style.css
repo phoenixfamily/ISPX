@@ -158,13 +158,56 @@ body.dark-mode {
     overflow: hidden;
 }
 
-h3 {
-  font-weight: 700;
-  color: #003b95;
+.dry-wash-section {
+  background: #f9faff;
 }
 
-p {
+.section-title {
+  font-weight: 700;
+  color: #003b95;
+  font-size: 2.5rem;
+}
+
+.text-card, .benefits-box {
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.dry-wash-text {
+  font-size: 1.125rem;
+  line-height: 1.8;
   color: #333;
+  margin-bottom: 1.25rem;
+}
+
+.highlight {
+  color: #0056d2;
+  font-weight: 700;
+}
+
+.benefits-title {
+  font-weight: 600;
+  color: #003b95;
+  font-size: 1.5rem;
+}
+
+.benefits-list li {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.benefits-list i {
+  font-size: 1.5rem;
+}
+
+/* فاصله آیتم‌ها روی موبایل */
+@media (max-width: 767px) {
+  .text-card, .benefits-box {
+    margin-bottom: 2rem;
+  }
 }
 
 
