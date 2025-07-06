@@ -154,41 +154,21 @@ body.dark-mode {
     color: #f0f0f0;
 }
 
-
 .form-wrapper, .service-box {
     overflow: hidden;
 }
 
-
-.selected {
-    position: relative;
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
-    text-align: center;
-    justify-content: center;
+h3 {
+  font-weight: 700;
+  color: #003b95;
 }
 
-.article {
-    position: relative;
-    width: 100%;
-    height: auto;
-    margin-top: 30px;
-    text-align: center;
-    justify-content: center;
-
+p {
+  color: #333;
 }
 
-.img-seo {
-    height: auto;
-    width: 50%;
-}
 
-.left-seo {
-    float: left;
-    display: inline-flex;
-    margin-top: 30px;
-}
+
 
 .col {
     width: 30%;
