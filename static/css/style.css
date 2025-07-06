@@ -136,6 +136,20 @@ body.dark-mode {
   }
 }
 
+.service-info {
+  background: linear-gradient(to bottom right, #003b95, #007bff);
+  border-radius: 0.75rem;
+  min-height: 100%;
+  color: white;
+}
+
+.service-info h2 {
+  font-size: 1.75rem;
+}
+
+.service-info i {
+  min-width: 32px;
+}
 
 
 
