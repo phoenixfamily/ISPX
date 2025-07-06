@@ -187,9 +187,13 @@ body.dark-mode {
 }
 
 .benefits-colored-box {
-  background-color: #003b95; /* رنگ برند آبی تیره */
+  background-color: #003b95;
   color: #fff;
-  max-width: 400px;
+  width: 100%; /* می‌چسبه به عرض عکس */
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .benefits-colored-title {
@@ -231,13 +235,13 @@ body.dark-mode {
 }
 
 .benefits-wrapper {
-  max-width: 600px; /* یا هر عرض دلخواهی */
+  max-width: 600px;  /* افزایش عرض کلی */
   width: 100%;
 }
 
 .benefit-img {
   width: 100%;
-  max-height: 250px;
+  max-height: 300px; /* کمی بزرگ‌تر از قبل */
   object-fit: cover;
 }
 
