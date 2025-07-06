@@ -59,7 +59,6 @@ body.dark-mode {
 }
 
 .nav-link {
-    text-decoration: underline;
     transition: color 0.3s ease;
 }
 
@@ -78,8 +77,6 @@ body.dark-mode {
 .nav.navbar-nav a:hover {
     color: grey;
 }
-
-
 
 .logoHolder {
     width: 100%;

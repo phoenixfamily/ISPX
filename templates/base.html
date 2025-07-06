@@ -52,22 +52,22 @@
 
 
 <header>
-   <nav class="navbar navbar-light navbar-expand-lg">
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+      <!-- لوگو -->
+      <a class="navbar-brand fw-bold text-primary" href="{% url 'home:view' %}">✈ ققنوس ایرانیان</a>
 
-    <button style="outline: none; box-shadow: none;" class="navbar-toggler justify-content-center" type="button"
-            data-toggle="collapse" data-bs-toggle="collapse" data-target="#collapsibleNavbar"
-            data-bs-target="#collapsibleNavbar" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-        <span class="" role="button"><i class="fa fa-bars" aria-hidden="true" style="color:#e6e6ff"></i></span>
-    </button>
+      <!-- دکمه موبایل -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fa fa-bars text-primary"></i></span>
+      </button>
 
-    <!-- Navbar links -->
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                {% block header %}
 
-                {% endblock %}
     </div>
-</nav>
+  </nav>
+</header>
 </header>
 
 
