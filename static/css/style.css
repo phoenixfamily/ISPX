@@ -53,30 +53,63 @@ body.dark-mode {
     color: var(--text-color);
 }
 
+/* استایل کلی برای هدر */
 .navbar {
-    background-color: var(--bg-color);
-    border-bottom: 2px solid var(--navbar-border);
+  transition: all 0.3s ease-in-out;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
 }
 
-.nav-link {
-    transition: color 0.3s ease;
+/* وقتی کاربر اسکرول کرد، هدر جمع بشه کمی */
+.navbar.shrink {
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-.nav-link:hover {
-    color: grey;
+/* لوگو */
+.navbar-brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0d6efd !important; /* Bootstrap primary */
 }
 
-.nav-link.active {
-    text-decoration: underline;
+/* لینک‌های منو */
+.navbar-nav .nav-link {
+  color: #444;
+  margin: 0 0.5rem;
+  transition: color 0.2s ease;
 }
 
-.nav.navbar-nav li a {
-    cursor: pointer;
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #0d6efd;
+  font-weight: 500;
 }
 
-.nav.navbar-nav a:hover {
-    color: grey;
+/* دکمه‌های ورود/ثبت‌نام */
+.btn-outline-primary {
+  border-width: 2px;
 }
+
+.btn-primary {
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(13, 110, 253, 0.2);
+}
+
+/* حالت موبایل */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    background-color: #fff;
+    padding: 1rem;
+    border-top: 1px solid #eee;
+  }
+
+  .navbar-nav .nav-link {
+    margin: 0.5rem 0;
+  }
+}
+
 
 .logoHolder {
     width: 100%;
