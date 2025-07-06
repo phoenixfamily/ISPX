@@ -49,8 +49,9 @@ META_USE_SCHEMAORG_PROPERTIES = True
 CSRF_TRUSTED_ORIGINS = ["https://iranianshiningphoenix.com", "https://www.iranianshiningphoenix.com"]
 
 ALLOWED_HOSTS = [
-    '127.0.0.1',
+    '188.121.121.81',
     'localhost',
+    '127.0.0.1'
     'www.iranianshiningphoenix.com',
     'iranianshiningphoenix.com'
 
