@@ -225,10 +225,6 @@ LOCALE_PATHS = [
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'  # اینجا جمع می‌کنه collectstatic
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',  # فایل‌های custom داخل پروژه
-]
-
 # فایل‌های رسانه‌ای که کاربر آپلود می‌کنه
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
