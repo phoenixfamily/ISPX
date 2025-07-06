@@ -186,28 +186,48 @@ body.dark-mode {
   font-weight: 700;
 }
 
-.benefits-title {
-  font-weight: 600;
-  color: #003b95;
-  font-size: 1.5rem;
+.benefits-colored-box {
+  background-color: #003b95; /* رنگ برند آبی تیره */
+  color: #fff;
+  max-width: 400px;
 }
 
-.benefits-list li {
-  font-size: 1.125rem;
-  margin-bottom: 1rem;
+.benefits-colored-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 0.5rem;
+}
+
+.benefits-colored-list li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
-.benefits-list i {
-  font-size: 1.5rem;
+.benefits-colored-list li:last-child {
+  margin-bottom: 0;
 }
 
-/* فاصله آیتم‌ها روی موبایل */
-@media (max-width: 767px) {
-  .text-card, .benefits-box {
-    margin-bottom: 2rem;
-  }
+.benefits-colored-list i {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-top: 4px;
+  min-width: 30px;
+}
+
+.benefit-text strong {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+
+.benefit-text p {
+  font-size: 0.95rem;
+  line-height: 1.3;
+  margin: 0;
+  opacity: 0.85;
 }
 
 
