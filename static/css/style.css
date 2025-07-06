@@ -16,8 +16,8 @@
     --navbar-toggler-border-color: #ccc; /* رنگ حاشیه برای حالت لایت */
     --navbar-toggler-bg-color: #fff; /* رنگ پس‌زمینه برای حالت لایت */
     --navbar-toggler-icon-color: #333; /* رنگ ایکون برای حالت لایت */
-    --footer-copyright:#142657;
-    --footer-copyright--text:#B1B2B2
+    --footer-copyright: #142657;
+    --footer-copyright--text: #B1B2B2
 }
 
 body.dark-mode {
@@ -34,8 +34,8 @@ body.dark-mode {
     --navbar-toggler-border-color-dark: #666; /* رنگ حاشیه برای حالت دارک */
     --navbar-toggler-bg-color-dark: #333; /* رنگ پس‌زمینه برای حالت دارک */
     --navbar-toggler-icon-color-dark: #fff; /* رنگ ایکون برای حالت دارک */
-     --footer-copyright:#142657;
-    --footer-copyright--text:#B1B2B2
+    --footer-copyright: #142657;
+    --footer-copyright--text: #B1B2B2
 }
 
 
@@ -55,105 +55,109 @@ body.dark-mode {
 
 /* استایل کلی برای هدر */
 .navbar {
-  transition: all 0.3s ease-in-out;
-  padding: 0.75rem 1rem;
-  font-size: 0.95rem;
+    transition: all 0.3s ease-in-out;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
 }
 
 /* وقتی کاربر اسکرول کرد، هدر جمع بشه کمی */
 .navbar.shrink {
-  padding-top: 0.3rem;
-  padding-bottom: 0.3rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 /* لوگو */
 .navbar-brand {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #0d6efd !important; /* Bootstrap primary */
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #0d6efd !important; /* Bootstrap primary */
 }
 
 /* لینک‌های منو */
 .navbar-nav .nav-link {
-  color: #444;
-  margin: 0 0.5rem;
-  transition: color 0.2s ease;
+    color: #444;
+    margin: 0 0.5rem;
+    transition: color 0.2s ease;
 }
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
-  color: #0d6efd;
-  font-weight: 500;
+    color: #0d6efd;
+    font-weight: 500;
 }
 
 /* دکمه‌های ورود/ثبت‌نام */
 .btn-outline-primary {
-  border-width: 2px;
+    border-width: 2px;
 }
 
 .btn-primary {
-  font-weight: 500;
-  box-shadow: 0 2px 6px rgba(13, 110, 253, 0.2);
+    font-weight: 500;
+    box-shadow: 0 2px 6px rgba(13, 110, 253, 0.2);
 }
 
 /* حالت موبایل */
 @media (max-width: 992px) {
-  .navbar-collapse {
-    background-color: #fff;
-    padding: 1rem;
-    border-top: 1px solid #eee;
-  }
+    .navbar-collapse {
+        background-color: #fff;
+        padding: 1rem;
+        border-top: 1px solid #eee;
+    }
 
-  .navbar-nav .nav-link {
-    margin: 0.5rem 0;
-  }
+    .navbar-nav .nav-link {
+        margin: 0.5rem 0;
+    }
 }
 
 .request-section {
-  background: linear-gradient(to right, #f8f9fa, #fff);
+    background: linear-gradient(to right, #f8f9fa, #fff);
 }
 
 .form-wrapper {
-  border-left: 4px solid #0d6efd;
+    border-left: 4px solid #0d6efd;
 }
 
 .carousel img {
-  height: 100%;
-  max-height: 480px;
-  object-fit: cover;
-  border-radius: 12px;
+    height: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
 @media (max-width: 992px) {
-  .form-wrapper {
-    border-left: none;
-    border-top: 4px solid #0d6efd;
-  }
+    .form-wrapper {
+        border-left: none;
+        border-top: 4px solid #0d6efd;
+    }
 
-  .carousel img {
-    max-height: 320px;
-  }
+    .carousel img {
+        max-height: 320px;
+    }
 }
 
 .service-box {
-  background: linear-gradient(to bottom right, #003b95, #007bff);
-  height: 100%;
-  min-height: 100%;
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(to bottom right, #003b95, #007bff);
+    height: 100%;
+    min-height: 100%;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 .service-box i {
-  color: white;
-  min-width: 32px;
+    color: white;
+    min-width: 32px;
 }
 
 .service-box p,
 .service-box h5 {
-  color: #f0f0f0;
+    color: #f0f0f0;
 }
 
+
+.form-wrapper, .service-box {
+    overflow: hidden;
+}
 
 
 .selected {
@@ -230,7 +234,7 @@ body.dark-mode {
 }
 
 
-.text-mute{
+.text-mute {
     color: var(--text-color-muted) !important;
 }
 
@@ -252,6 +256,7 @@ body.dark-mode {
     background-color: var(--footer-copyright);
     color: var(--footer-copyright--text);
 }
+
 .card-footer a {
     width: 100%;
     height: 100%;
