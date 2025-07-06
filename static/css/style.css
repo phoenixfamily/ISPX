@@ -230,6 +230,17 @@ body.dark-mode {
   opacity: 0.85;
 }
 
+.benefits-wrapper {
+  max-width: 400px; /* یا هر عرض دلخواهی */
+  width: 100%;
+}
+
+.benefit-img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+}
+
 
 
 

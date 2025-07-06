@@ -208,38 +208,49 @@
         </div>
       </div>
 
-      <!-- سمت راست: عکس و باکس فواید زیر هم -->
-      <div class="col-md-6 d-flex flex-column justify-content-between h-100">
-        <div class="mb-4">
-          <img src="{% static 'images/aircraft-detailing.webp' %}" alt="Aircraft Dry Wash" class="img-fluid rounded shadow" style="max-height: 48vh; width: 100%; object-fit: cover;">
-        </div>
-<div class="benefits-colored-box p-4 rounded shadow">
-  <h5 class="benefits-colored-title mb-3">Key Benefits</h5>
-  <ul class="benefits-colored-list list-unstyled">
-    <li>
-      <i class="fa fa-tint"></i>
-      <div class="benefit-text">
-        <strong>Water Saving</strong>
-        <p>Reduces water consumption drastically.</p>
-      </div>
-    </li>
-    <li>
-      <i class="fa fa-leaf"></i>
-      <div class="benefit-text">
-        <strong>Eco-Friendly</strong>
-        <p>Environmentally safe method.</p>
-      </div>
-    </li>
-    <li>
-      <i class="fa fa-wallet"></i>
-      <div class="benefit-text">
-        <strong>Cost Effective</strong>
-        <p>Lowers operational costs.</p>
-      </div>
-    </li>
-  </ul>
+        <div class="col-md-5 d-flex justify-content-center align-items-start">
+  <div class="benefits-wrapper text-center">
+    <!-- عکس -->
+    <img src="{% static 'images/aircraft-detailing.webp' %}" alt="Aircraft Dry Wash"
+         class="img-fluid rounded shadow mb-4 benefit-img">
+
+    <!-- باکس فواید -->
+    <div class="benefits-colored-box p-4 rounded shadow">
+      <h5 class="benefits-colored-title mb-4">Key Benefits</h5>
+      <ul class="benefits-colored-list list-unstyled">
+        <li>
+          <i class="fa fa-tint"></i>
+          <div class="benefit-text">
+            <strong>Water Saving</strong>
+            <p>Reduces water consumption drastically compared to traditional washing.</p>
+          </div>
+        </li>
+        <li>
+          <i class="fa fa-leaf"></i>
+          <div class="benefit-text">
+            <strong>Eco-Friendly</strong>
+            <p>Environmentally safe method with no harmful runoff.</p>
+          </div>
+        </li>
+        <li>
+          <i class="fa fa-wallet"></i>
+          <div class="benefit-text">
+            <strong>Cost Effective</strong>
+            <p>Lowers operational costs by minimizing resources.</p>
+          </div>
+        </li>
+        <li>
+          <i class="fa fa-shield-alt"></i>
+          <div class="benefit-text">
+            <strong>Prevents Corrosion</strong>
+            <p>Protects aircraft surfaces by eliminating water damage risks.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
-      </div>
+
     </div>
   </div>
 </section>
