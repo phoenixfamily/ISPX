@@ -110,26 +110,34 @@ body.dark-mode {
   }
 }
 
+.request-section {
+  background: linear-gradient(to right, #f8f9fa, #fff);
+}
 
-.logoHolder {
-    width: 100%;
-    position: absolute;
-    margin-top: 20px;
-    display: inline-flex;
-    z-index: 10 !important;
-    direction: ltr;
-    align-content: center;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
+.form-wrapper {
+  border-left: 4px solid #0d6efd;
+}
+
+.carousel img {
+  height: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+@media (max-width: 991.98px) {
+  .form-wrapper {
+    border-left: none;
+    border-top: 4px solid #0d6efd;
+  }
+
+  .carousel img {
+    max-height: 320px;
+  }
 }
 
 
-.logo {
-    width: 112px;
-    height: 100px;
-    border-radius: 25px;
-}
+
 
 .selected {
     position: relative;
@@ -210,47 +218,6 @@ body.dark-mode {
 }
 
 
-.dropdown-content a {
-    width: auto;
-    color: black;
-    font-size: 16px;
-    text-decoration: none;
-    display: block;
-}
-
-
-.dropdown-menu li a {
-    color: black;
-    width: 100%;
-    text-align: left;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-menu li a:hover {
-    background-color: rgba(57, 149, 225, 0.1);
-    color: black;
-}
-
-.container-footer {
-    float: left;
-    margin-top: 50px;
-    margin-left: 50px;
-    display: inline-grid;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    height: 50px;
-    width: 50px;
-    background-color: rgba(0, 0, 0, 0.6);
-
-}
-
-
-.carousel-inner {
-    height: 500px;
-}
-
 .seo {
     margin-top: 30px;
 }
@@ -277,22 +244,6 @@ body.dark-mode {
     justify-content: center;
     cursor: pointer;
     display: inline-block;
-}
-
-.form-container {
-    max-width: 600px;
-    margin: 50px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.form-title {
-    margin-bottom: 20px;
-    font-weight: bold;
-    text-align: center;
-    color: #0d6efd;
 }
 
 @media (min-width: 576px) {
