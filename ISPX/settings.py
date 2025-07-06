@@ -223,7 +223,7 @@ LOCALE_PATHS = [
 
 # فایل‌های استاتیک (CSS, JS, Images)
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # اینجا جمع می‌کنه collectstatic
+STATIC_ROOT = BASE_DIR / 'static'  # اینجا جمع می‌کنه collectstatic
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static',  # فایل‌های custom داخل پروژه
