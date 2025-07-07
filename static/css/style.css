@@ -394,3 +394,21 @@ body.dark-mode {
 .bg-telegram { background: #0088cc; }
 .bg-whatsapp { background: #25D366; }
 
+.about-header {
+  background: linear-gradient(135deg, #003b95, #0071c2);
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #003b95;
+}
+
+.card i {
+  transition: transform 0.3s ease;
+}
+
+.card:hover i {
+  transform: scale(1.2);
+}
+
