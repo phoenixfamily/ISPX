@@ -13,10 +13,8 @@ from rest_framework import status
 from django_filters.rest_framework import DjangoFilterBackend
 from ISPX.permissions import IsSuperUser
 
-# Create your views here.
 
 
-@cache_page(60 * 15)
 def product_view(request):
     template = loader.get_template('product.html')
     category = Category.objects.all()
