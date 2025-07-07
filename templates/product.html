@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load i18n %}<!DOCTYPE html>
+{% load i18n %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title></title></head>
@@ -100,7 +101,7 @@
         <div class="container text-center">
             <h3 class="mb-4 fw-bold">How to Use Phoenix A1103</h3>
             <video class="rounded shadow" style="width: 90%; max-width: 900px;" controls
-                   poster="{% static 'video-poster.png' %}">
+                   poster="{% static 'images/video-poster.png' %}">
                 <source src="{% get_media_prefix %}videos/brand.mov" type="video/mp4"/>
             </video>
         </div>
