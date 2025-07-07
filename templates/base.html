@@ -105,11 +105,11 @@
       <div class="col-md-2 mb-4">
         <h6 class="fw-bold mb-3">Quick Links</h6>
         <ul class="list-unstyled">
-          <li><a href="#" class="footer-link">Home</a></li>
+          <li><a href="{% url 'home:view' %}" class="footer-link">Home</a></li>
           <li><a href="#" class="footer-link">Services</a></li>
             <li><a href="#" class="footer-link">Products</a></li>
-          <li><a href="#" class="footer-link">About</a></li>
-          <li><a href="#" class="footer-link">Contact</a></li>
+            <li><a href="{% url 'contact:view' %}" class="footer-link">Contact us</a></li>
+          <li><a href="{% url 'about:view' %}" class="footer-link">About us</a></li>
         </ul>
       </div>
 
