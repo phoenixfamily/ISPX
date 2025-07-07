@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 import os
 from pathlib import Path
+
+from django.contrib import staticfiles
 from django.utils.translation import gettext_lazy as _
 import os
 from dotenv import load_dotenv
@@ -224,8 +226,9 @@ LOCALE_PATHS = [
 ]
 
 # فایل‌های استاتیک (CSS, JS, Images)
-STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'static'  # اینجا جمع می‌کنه collectstatic
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")  # فولدر نهایی برای nginx
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 # فایل‌های رسانه‌ای که کاربر آپلود می‌کنه
 MEDIA_URL = '/media/'
