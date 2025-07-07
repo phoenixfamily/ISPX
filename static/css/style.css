@@ -162,11 +162,6 @@ body.dark-mode {
     background: #f9faff;
 }
 
-.section-title {
-    font-weight: 700;
-    color: #003b95;
-    font-size: 2.5rem;
-}
 
 .text-card, .benefits-box {
     background: #fff;
@@ -267,6 +262,15 @@ body.dark-mode {
   color: #555;
 }
 
+
+.why-card h5 {
+  color: #003b95;
+}
+
+.why-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
 
 
 .col {
