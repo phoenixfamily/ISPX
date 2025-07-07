@@ -37,37 +37,75 @@
     </div>
 {% endblock %}
 
-<div class="product-item" >
-    
-    <img src="{% get_media_prefix %}wash-wax.jpg" class="product-img">
+{% block content %}
 
-    <div style="width: auto; margin-left: 20px ; margin-right: 20px ; margin-top: 20px">
+    <section class="product-hero py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <!-- Product Image -->
+                <div class="col-md-6 text-center">
+                    <img src="{% get_media_prefix %}wash-wax.jpg" alt="Phoenix A1103" class="img-fluid rounded shadow">
+                </div>
+                <!-- Product Info -->
+                <div class="col-md-6">
+                    <h1 class="fw-bold text-primary mb-3">Phoenix A1103</h1>
+                    <p class="lead" style="line-height: 1.9;">
+                        Phoenix A1103 is a revolutionary dry-cleaning solution specifically developed for aircraft
+                        exteriors. It cleans without water, reducing waste, preserving paint, and improving aircraft
+                        appearance — all while being eco-friendly.
+                    </p>
+                    <ul class="list-unstyled mt-4">
+                        <li><i class="fa fa-check-circle text-success me-2"></i> Waterless cleaning solution</li>
+                        <li><i class="fa fa-check-circle text-success me-2"></i> Safe on all aircraft surfaces</li>
+                        <li><i class="fa fa-check-circle text-success me-2"></i> Saves time and labor cost</li>
+                        <li><i class="fa fa-check-circle text-success me-2"></i> Eco-friendly formula, no residue</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <h3>Phoenix A1103</h3>
-        <p>
-            Meet Phoenix, the revolutionary cleaning device designed to effortlessly clean all types of surfaces. Engineered with cutting-edge technology, Phoenix is your go-to solution for maintaining a spotless environment in your home, office, or any other space.
-        </p>
+    <!-- Feature Cards -->
+    <section class="product-features py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Key Features</h2>
+            <div class="row text-center g-4">
+                <div class="col-md-4">
+                    <div class="p-4 shadow-sm bg-white rounded h-100">
+                        <i class="fa fa-broom fa-2x text-primary mb-3"></i>
+                        <h6 class="fw-bold">Versatile Cleaning</h6>
+                        <p class="small">Cleans metals, composites, windows, and painted surfaces.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 shadow-sm bg-white rounded h-100">
+                        <i class="fa fa-robot fa-2x text-success mb-3"></i>
+                        <h6 class="fw-bold">Smart Technology</h6>
+                        <p class="small">Adapts cleaning intensity based on dirt level and surface type.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 shadow-sm bg-white rounded h-100">
+                        <i class="fa fa-hand-sparkles fa-2x text-warning mb-3"></i>
+                        <h6 class="fw-bold">Ergonomic Design</h6>
+                        <p class="small">Easy to use by one technician with intuitive controls.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <hr style="height: 2px">
-
-        <h3 style="margin-bottom: 10px">Key Features:</h3>
-        <h6 style="margin-top: 10px">1. Versatile Cleaning Power:</h6>
-        &emsp; Phoenix is equipped to handle a wide range of surfaces, including hardwood floors, tiles, carpets, glass, and more. Its powerful cleaning mechanism ensures that no dirt, dust, or stains are left behind.
-        <h6 style="margin-top: 10px">2. Advanced Cleaning Technology:</h6>
-        &emsp; With its state-of-the-art sensors and intelligent cleaning system, Phoenix adapts to different surfaces and adjusts its cleaning mode accordingly. This ensures optimal performance and maximum efficiency.
-        <h6 style="margin-top: 10px">3. User-Friendly Design:</h6>
-        &emsp; Designed with ease of use in mind, Phoenix features an intuitive interface that allows you to switch between cleaning modes with just a touch. Its ergonomic design ensures comfortable handling and operation.
-    </div>
-</div>
-
-<hr style="height: 2px ; margin-right: 10px ; margin-left: 10px">
-
-
-<h3 class="videoTitle" >How to use Phenix A1103?</h3>
-
-<video style="width: 90% ; height: auto ; margin: 30px 5%;" controls poster="{% get_media_prefix %}video-poster.png">
-  <source src="{% get_media_prefix %}brand.mov" type="video/mp4" />
-</video>
+    <!-- Video Section -->
+    <section class="product-video py-5 bg-light">
+        <div class="container text-center">
+            <h3 class="mb-4 fw-bold">How to Use Phoenix A1103</h3>
+            <video class="rounded shadow" style="width: 90%; max-width: 900px;" controls
+                   poster="{% get_media_prefix %}video-poster.png">
+                <source src="{% get_media_prefix %}brand.mov" type="video/mp4"/>
+            </video>
+        </div>
+    </section>
+{% endblock %}
 
 </body>
 </html>
