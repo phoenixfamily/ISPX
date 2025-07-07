@@ -351,3 +351,46 @@ body.dark-mode {
     color: #fff;
     transform: scale(1.2);
 }
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #003b95;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border-radius: 0.5rem;
+  box-shadow: none;
+  border: 1px solid #ddd;
+  transition: 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #003b95;
+  box-shadow: 0 0 0 0.15rem rgba(0, 59, 149, 0.1);
+}
+
+.social-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  transition: 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+/* رنگ شبکه‌های اجتماعی */
+.bg-instagram { background: #E1306C; }
+.bg-linkedin { background: #0077B5; }
+.bg-telegram { background: #0088cc; }
+.bg-whatsapp { background: #25D366; }
+
