@@ -245,6 +245,29 @@ body.dark-mode {
     object-fit: cover;
 }
 
+.section-title {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #003b95;
+}
+
+.service-card i {
+  display: block;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-card h5 {
+  color: #003b95;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+
 
 .col {
     width: 30%;
