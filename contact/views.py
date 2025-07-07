@@ -9,7 +9,6 @@ from .forms import ContactForm
 
 
 # Create your views here.
-@cache_page(60 * 15)
 def contact_view(request):
     template = loader.get_template('contact.html')
     category = Category.objects.all()

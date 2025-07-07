@@ -14,7 +14,6 @@ from category.models import Category
 
 
 # Create your views here.
-@cache_page(60 * 15)
 def about_view(request):
     template = loader.get_template('about.html')
     category = Category.objects.all()
