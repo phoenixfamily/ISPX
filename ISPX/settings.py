@@ -57,7 +57,8 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1'
     'www.iranianshiningphoenix.com',
-    'iranianshiningphoenix.com'
+    'iranianshiningphoenix.com',
+    'phoenixfamily.ir'
 
 ]
 
