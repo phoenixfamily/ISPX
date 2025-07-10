@@ -20,6 +20,7 @@ from django.contrib import admin
 from django.contrib.flatpages import sitemaps
 from django.contrib.sitemaps.views import sitemap
 from django.urls import path, include
+from django.views.generic import RedirectView
 from django.views.i18n import set_language
 from rest_framework.authtoken.views import obtain_auth_token
 from about.views import *
@@ -32,6 +33,9 @@ from ISPX import settings
 
 
 urlpatterns = [
+
+    path('', RedirectView.as_view(url='/home/', permanent=True)),
+
     path('admin/', admin.site.urls),  # مسیر پنل ادمین
     path('set_language/', set_language, name='set_language'),  # به جای include از set_language استفاده کنید
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
