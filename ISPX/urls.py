@@ -46,7 +46,7 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     path('about/', include('about.urls', namespace='about')),  # مسیر URLهای اپلیکیشن About
-    path('blogs/', include('category.urls', namespace='blogs')),  # مسیر URLهای اپلیکیشن Blog
+    path('category/', include('category.urls', namespace='category')),  # مسیر URLهای اپلیکیشن Blog
     path('contact/', include('contact.urls', namespace='contact')),  # مسیر URLهای اپلیکیشن Contact
     path('home/', include('home.urls', namespace='home')),  # مسیر URLهای اپلیکیشن Home
     path('services/', include('services.urls', namespace='services')),  # مسیر URLهای اپلیکیشن Services

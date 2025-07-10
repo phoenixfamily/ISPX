@@ -2,7 +2,6 @@ from django.db import models
 
 TYPE_CHOICE = [
     ('services', 'خدمات'),
-    ('products', 'محصولات'),
 ]
 
 
