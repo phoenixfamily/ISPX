@@ -17,14 +17,14 @@
                 <a class="nav-link active" href="{% url 'home:view' %}">Home</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                   data-bs-toggle="dropdown" aria-expanded="false">
-                    Services
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button"
+                   aria-expanded="false">Services</a>
+                <ul class="dropdown-menu">
                     {% for x in category %}
-                        <li><a class="dropdown-item" href="{% url 'services:services_view' x.id %}">{{ x.name }}</a>
-                        </li>
+                        {% if x.type == "services" %}
+                            <li><a class="dropdown-item" href="{% url 'services:services_view' x.id %}">{{ x.name }}</a>
+                            </li>
+                        {% endif %}
                     {% endfor %}
                 </ul>
             </li>
