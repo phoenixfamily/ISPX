@@ -19,7 +19,6 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
                 <ul class="dropdown-menu">
-                <p>{{ category }}</p>
 
                     {% for x in category %}
                             <li><a class="dropdown-item" href="{% url 'services:services_view' x.id %}">{{ x.name }}</a>
@@ -180,6 +179,9 @@
     </section>
 
     <section class="featured-services-section py-5 bg-light">
+    {% for x in category %}
+        <div>x.name</div>
+        {% endfor %}
         <div class="container-fluid px-lg-5">
             <h3 class="text-center mb-5 section-title">Our Core Services</h3>
             <div class="row g-4">
