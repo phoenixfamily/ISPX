@@ -442,7 +442,7 @@ body.dark-mode {
 .custom-services .service-box {
     border-radius: 1rem;
     overflow: hidden;
-    background: #f8f9fa;
+    background: linear-gradient(to right, #f8f9fa, #fff);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
 }
 
@@ -463,16 +463,3 @@ body.dark-mode {
     color: #fff;
     min-height: 300px;
 }
-
-.custom-services .btn-light {
-    background-color: #fff;
-    color: #0056b3;
-    border: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.custom-services .btn-light:hover {
-    background-color: #e6e6e6;
-}
-
