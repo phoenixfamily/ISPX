@@ -19,6 +19,8 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
                 <ul class="dropdown-menu">
+                <p>{{ category }}</p>
+
                     {% for x in category %}
                             <li><a class="dropdown-item" href="{% url 'services:services_view' x.id %}">{{ x.name }}</a>
                             </li>
@@ -487,6 +489,7 @@
             })
             .catch(error => console.error("Error:", error));
     });
+
 </script>
 
 
