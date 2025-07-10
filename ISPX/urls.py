@@ -36,6 +36,8 @@ urlpatterns = [
 
     path('', RedirectView.as_view(url='/home/', permanent=True)),
 
+    path('api-auth/', include('rest_framework.urls')),
+
     path('admin/', admin.site.urls),  # مسیر پنل ادمین
     path('set_language/', set_language, name='set_language'),  # به جای include از set_language استفاده کنید
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
