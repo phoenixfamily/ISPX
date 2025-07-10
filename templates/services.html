@@ -52,28 +52,30 @@
 {% endblock %}
 
 {% block content %}
-<section class="services-list py-5">
+
+<section class="custom-services py-5">
   <div class="container">
-
-    {% for x in services %}
-      <div class="row align-items-center mb-5 flex-lg-row{% if forloop.counter0|divisibleby:2 %} {% else %}-reverse{% endif %}">
-
+    {% for service in services %}
+      <div class="service-box d-flex flex-wrap align-items-stretch mb-5 {% if forloop.counter|divisibleby:2 %}reverse{% endif %}">
         <!-- تصویر -->
-        <div class="col-lg-6 mb-4 mb-lg-0">
-          <img src="/media/{{ x.image }}" alt="{{ x.title }}" class="img-fluid rounded shadow">
+        <div class="service-img col-md-6">
+          <img src="/media/{{ service.image }}" alt="{{ service.title }}" class="img-fluid w-100 h-100 object-fit-cover rounded-start">
         </div>
 
-        <!-- متن -->
-        <div class="col-lg-6">
-          <h3 class="fw-bold mb-3">{{ x.title }}</h3>
-          <p class="text-muted">{{ x.description }}</p>
+        <!-- محتوا -->
+        <div class="service-content col-md-6 bg-primary text-white p-4 d-flex flex-column justify-content-between rounded-end">
+          <div>
+            <h3 class="fw-bold mb-3">{{ service.title }}</h3>
+            <p>{{ service.description|truncatewords:60 }}</p>
+          </div>
+          <a href="{% url 'services:services_view' service.id %}" class="btn btn-light mt-3 align-self-start">Read More</a>
         </div>
-
       </div>
     {% endfor %}
-
   </div>
 </section>
+
+
 
 
 {% endblock %}

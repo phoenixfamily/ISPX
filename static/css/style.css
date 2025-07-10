@@ -439,16 +439,37 @@ body.dark-mode {
     border: 2px solid #0071c2;
 }
 
-.services-list {
-    background-color: #f8f9fa;
+.custom-services .service-box {
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #f8f9fa;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
 }
 
-.services-list h3 {
-    color: #003566;
+.custom-services .service-box.reverse {
+  flex-direction: row-reverse;
 }
 
-.services-list p {
-    font-size: 1.1rem;
-    line-height: 1.8;
+.custom-services .service-img img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.custom-services .service-content {
+  background-color: #0056b3;
+  color: #fff;
+  min-height: 300px;
+}
+
+.custom-services .btn-light {
+  background-color: #fff;
+  color: #0056b3;
+  border: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.custom-services .btn-light:hover {
+  background-color: #e6e6e6;
 }
 
