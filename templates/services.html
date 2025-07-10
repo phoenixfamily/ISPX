@@ -66,9 +66,8 @@
         <div class="service-content col-md-6 text-white p-4 d-flex flex-column justify-content-between rounded-end">
           <div>
             <h3 class="fw-bold mb-3">{{ service.title }}</h3>
-            <p>{{ service.description|truncatewords:60 }}</p>
+            <p>{{ service.description|truncatewords:80 }}</p>
           </div>
-          <a href="{% url 'services:services_view' service.id %}" class="btn btn-light mt-3 align-self-start">Read More</a>
         </div>
       </div>
     {% endfor %}
