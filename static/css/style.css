@@ -439,3 +439,16 @@ body.dark-mode {
     border: 2px solid #0071c2;
 }
 
+.services-list {
+    background-color: #f8f9fa;
+}
+
+.services-list h3 {
+    color: #003566;
+}
+
+.services-list p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
