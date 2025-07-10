@@ -1,6 +1,5 @@
 from django.http import HttpResponse
 from django.template import loader
-from django.views.decorators.cache import cache_page
 
 from category.models import Category
 from .models import Services
