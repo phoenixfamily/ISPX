@@ -17,15 +17,18 @@
                 <a class="nav-link active" href="{% url 'home:view' %}">Home</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
-                <ul class="dropdown-menu">
-
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false">
+                    Services
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     {% for x in category %}
-                            <li><a class="dropdown-item" href="{% url 'services:services_view' x.id %}">{{ x.name }}</a>
-                            </li>
+                        <li><a class="dropdown-item" href="{% url 'services:services_view' x.id %}">{{ x.name }}</a>
+                        </li>
                     {% endfor %}
                 </ul>
             </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'product:view' %}">Products</a>
             </li>
@@ -179,9 +182,6 @@
     </section>
 
     <section class="featured-services-section py-5 bg-light">
-    {% for x in category %}
-        <div>x.name</div>
-        {% endfor %}
         <div class="container-fluid px-lg-5">
             <h3 class="text-center mb-5 section-title">Our Core Services</h3>
             <div class="row g-4">
