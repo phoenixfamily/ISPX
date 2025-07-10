@@ -10,7 +10,6 @@ from rest_framework import viewsets, generics, status
 from ISPX.permissions import IsSuperUser
 
 
-@cache_page(60 * 15)
 def services_view(request, pk):
     template = loader.get_template('services.html')
     category = Category.objects.all()
