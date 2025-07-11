@@ -137,8 +137,8 @@ body.dark-mode {
 }
 .service-box {
   display: flex;
-  min-height: 400px;
-  height: 400px; /* ارتفاع ثابت برای کل باکس */
+  min-height: 350px;
+  height: 350px; /* ارتفاع ثابت برای کل باکس */
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
@@ -148,7 +148,7 @@ body.dark-mode {
 .service-img,
 .service-content {
   flex: 1 1 50%;
-  height: 3500px; /* ارتفاع ثابت */
+  height: 350px; /* ارتفاع ثابت */
   display: flex;
   justify-content: center;
   align-items: stretch;
