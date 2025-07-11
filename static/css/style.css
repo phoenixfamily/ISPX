@@ -137,8 +137,7 @@ body.dark-mode {
 }
 
 .service-box {
-    /*background: linear-gradient(to bottom right, #003b95, #007bff);*/
-    background-color: black;
+    background: linear-gradient(to bottom right, #003b95, #007bff);
     display: flex;
     flex-wrap: wrap;
     min-height: 400px;
@@ -147,337 +146,343 @@ body.dark-mode {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
-.service-box i {
-    color: white;
-    min-width: 32px;
-}
-
-.service-box p,
-.service-box h5 {
-    color: #f0f0f0;
-}
-
-.form-wrapper, .service-box {
-    overflow: hidden;
-}
-
-
 .service-box .service-img,
 .service-box .service-content {
+    flex: 1 1 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0;
+    height: 100%;
+    min-height: 400px; /* اطمینان از تطابق ارتفاع */
 }
 
 .service-box .service-img img {
+    width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 0;
-    }
-    .dry-wash-section {
-        background: #f9faff;
-    }
+}
 
-
-    .text-card, .benefits-box {
-        background: #fff;
-        border-radius: 0.75rem;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+@media (max-width: 768px) {
+    .service-box {
+        flex-direction: column;
     }
 
-    .dry-wash-text {
-        font-size: 1.125rem;
-        line-height: 1.8;
-        color: #333;
-        margin-bottom: 1rem;
+    .service-box .service-img,
+    .service-box .service-content {
+        min-height: auto;
+        height: auto;
+        flex: 1 1 auto;
     }
 
-    .highlight {
-        color: #0056d2;
-        font-weight: 700;
+    .service-box .service-img img {
+        max-height: 300px;
+    }
+}
+
+.dry-wash-section {
+    background: #f9faff;
+}
+
+
+.text-card, .benefits-box {
+    background: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dry-wash-text {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    color: #0056d2;
+    font-weight: 700;
+}
+
+.benefits-colored-box {
+    background-color: #003b95;
+    color: #fff;
+    width: 100%; /* می‌چسبه به عرض عکس */
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.benefits-colored-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 0.5rem;
+}
+
+.benefits-colored-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.benefits-colored-list li:last-child {
+    margin-bottom: 0;
+}
+
+.benefits-colored-list i {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-top: 4px;
+    min-width: 30px;
+}
+
+.benefit-text strong {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+}
+
+.benefit-text p {
+    font-size: 0.95rem;
+    line-height: 1.3;
+    margin: 0;
+    opacity: 0.85;
+}
+
+.benefits-wrapper {
+    height: 100%;
+    min-height: 100%;
+}
+
+.benefit-img {
+    width: 100%;
+    max-height: 300px; /* کمی بزرگ‌تر از قبل */
+    object-fit: cover;
+}
+
+.section-title {
+    font-weight: 700;
+    font-size: 2rem;
+    color: #003b95;
+}
+
+.service-card i {
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.service-card h5 {
+    color: #003b95;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+
+.why-card h5 {
+    color: #003b95;
+}
+
+.why-card p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.certifications-section .cert-box {
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.cert-box:hover {
+    transform: translateY(-5px);
+}
+
+.section-title {
+    color: #003b95;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.gallery-item {
+    position: relative;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.gallery-img {
+    object-fit: cover;
+    width: 100%;
+    height: 230px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-img {
+    transform: scale(1.05);
+    filter: brightness(0.9);
+}
+
+
+.copyright {
+    background-color: var(--footer-copyright);
+    color: var(--footer-copyright--text);
+}
+
+@media (min-width: 576px) {
+    .card-group.card-group-scroll {
+        overflow-x: auto;
+        flex-wrap: nowrap;
     }
 
-    .benefits-colored-box {
-        background-color: #003b95;
-        color: #fff;
-        width: 100%; /* می‌چسبه به عرض عکس */
-        margin-top: 1.5rem;
-        padding: 1.5rem;
-        border-radius: 0.75rem;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    ::-webkit-scrollbar {
+        display: none;
     }
 
-    .benefits-colored-title {
-        font-weight: 700;
-        font-size: 1.5rem;
-        border-bottom: 2px solid #fff;
-        padding-bottom: 0.5rem;
-    }
+}
 
-    .benefits-colored-list li {
-        display: flex;
-        align-items: flex-start;
-        gap: 12px;
-        margin-bottom: 20px;
-    }
+.card-group.card-group-scroll > .card {
+    flex-basis: 35%;
+}
 
-    .benefits-colored-list li:last-child {
-        margin-bottom: 0;
-    }
+.footer-link {
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
 
-    .benefits-colored-list i {
-        font-size: 1.8rem;
-        color: #fff;
-        margin-top: 4px;
-        min-width: 30px;
-    }
+.footer-link:hover {
+    color: #fff;
+    padding-left: 5px;
+}
 
-    .benefit-text strong {
-        display: block;
-        font-size: 1.2rem;
-        margin-bottom: 4px;
-    }
+.social-icon {
+    color: #ccc;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
 
-    .benefit-text p {
-        font-size: 0.95rem;
-        line-height: 1.3;
-        margin: 0;
-        opacity: 0.85;
-    }
+.social-icon:hover {
+    color: #fff;
+    transform: scale(1.2);
+}
 
-    .benefits-wrapper {
-        height: 100%;
-        min-height: 100%;
-    }
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #003b95;
+}
 
-    .benefit-img {
-        width: 100%;
-        max-height: 300px; /* کمی بزرگ‌تر از قبل */
-        object-fit: cover;
-    }
+.contact-form input,
+.contact-form textarea {
+    border-radius: 0.5rem;
+    box-shadow: none;
+    border: 1px solid #ddd;
+    transition: 0.2s;
+}
 
-    .section-title {
-        font-weight: 700;
-        font-size: 2rem;
-        color: #003b95;
-    }
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #003b95;
+    box-shadow: 0 0 0 0.15rem rgba(0, 59, 149, 0.1);
+}
 
-    .service-card i {
-        display: block;
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-    }
+.social-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    transition: 0.3s ease;
+}
 
-    .service-card h5 {
-        color: #003b95;
-    }
+.social-icon:hover {
+    transform: scale(1.1);
+}
 
-    .service-card p {
-        font-size: 0.95rem;
-        line-height: 1.5;
-        color: #555;
-    }
+/* رنگ شبکه‌های اجتماعی */
 
+.bg-instagram {
+    background: #E1306C;
+}
 
-    .why-card h5 {
-        color: #003b95;
-    }
+.bg-linkedin {
+    background: #0077B5;
+}
 
-    .why-card p {
-        font-size: 0.95rem;
-        color: #555;
-    }
+.bg-telegram {
+    background: #0088cc;
+}
 
-    .certifications-section .cert-box {
-        transition: transform 0.3s ease;
-        text-align: center;
-    }
+.bg-whatsapp {
+    background: #25D366;
+}
 
-    .cert-box:hover {
-        transform: translateY(-5px);
-    }
+.about-header {
+    background: linear-gradient(135deg, #003b95, #0071c2);
+}
 
-    .section-title {
-        color: #003b95;
-        font-size: 2rem;
-        font-weight: 700;
-    }
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #003b95;
+}
 
-    .gallery-item {
-        position: relative;
-        transition: transform 0.3s ease;
-        cursor: pointer;
-        border-radius: 12px;
-    }
+.card i {
+    transition: transform 0.3s ease;
+}
 
-    .gallery-img {
-        object-fit: cover;
-        width: 100%;
-        height: 230px;
-        transition: transform 0.3s ease;
-    }
+.card:hover i {
+    transform: scale(1.2);
+}
 
-    .gallery-item:hover .gallery-img {
-        transform: scale(1.05);
-        filter: brightness(0.9);
-    }
+.product-hero h1 {
+    font-size: 2.5rem;
+}
 
+.product-features .fa {
+    transition: transform 0.3s ease;
+}
 
-    .copyright {
-        background-color: var(--footer-copyright);
-        color: var(--footer-copyright--text);
-    }
+.product-features .fa:hover {
+    transform: scale(1.2);
+}
 
-    @media (min-width: 576px) {
-        .card-group.card-group-scroll {
-            overflow-x: auto;
-            flex-wrap: nowrap;
-        }
+.product-video video {
+    border: 2px solid #0071c2;
+}
 
-        ::-webkit-scrollbar {
-            display: none;
-        }
+.custom-services .service-box {
+    border-radius: 1rem;
+    overflow: hidden;
+    background: linear-gradient(to right, #f8f9fa, #fff);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
+}
 
-    }
+.custom-services .service-box.reverse {
+    flex-direction: row-reverse;
+}
 
-    .card-group.card-group-scroll > .card {
-        flex-basis: 35%;
-    }
+.custom-services .service-img img {
+    object-fit: cover;
+    height: 100%;
+}
 
-    .footer-link {
-        color: #ccc;
-        text-decoration: none;
-        display: block;
-        margin-bottom: 0.5rem;
-        transition: all 0.3s ease;
-    }
-
-    .footer-link:hover {
-        color: #fff;
-        padding-left: 5px;
-    }
-
-    .social-icon {
-        color: #ccc;
-        font-size: 1.2rem;
-        transition: 0.3s;
-    }
-
-    .social-icon:hover {
-        color: #fff;
-        transform: scale(1.2);
-    }
-
-    .section-title {
-        font-size: 2.2rem;
-        font-weight: 700;
-        color: #003b95;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        border-radius: 0.5rem;
-        box-shadow: none;
-        border: 1px solid #ddd;
-        transition: 0.2s;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-        border-color: #003b95;
-        box-shadow: 0 0 0 0.15rem rgba(0, 59, 149, 0.1);
-    }
-
-    .social-icon {
-        width: 42px;
-        height: 42px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        border-radius: 50%;
-        font-size: 1.2rem;
-        transition: 0.3s ease;
-    }
-
-    .social-icon:hover {
-        transform: scale(1.1);
-    }
-
-    /* رنگ شبکه‌های اجتماعی */
-
-    .bg-instagram {
-        background: #E1306C;
-    }
-
-    .bg-linkedin {
-        background: #0077B5;
-    }
-
-    .bg-telegram {
-        background: #0088cc;
-    }
-
-    .bg-whatsapp {
-        background: #25D366;
-    }
-
-    .about-header {
-        background: linear-gradient(135deg, #003b95, #0071c2);
-    }
-
-    .section-title {
-        font-size: 2rem;
-        font-weight: 700;
-        color: #003b95;
-    }
-
-    .card i {
-        transition: transform 0.3s ease;
-    }
-
-    .card:hover i {
-        transform: scale(1.2);
-    }
-
-    .product-hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .product-features .fa {
-        transition: transform 0.3s ease;
-    }
-
-    .product-features .fa:hover {
-        transform: scale(1.2);
-    }
-
-    .product-video video {
-        border: 2px solid #0071c2;
-    }
-
-    .custom-services .service-box {
-        border-radius: 1rem;
-        overflow: hidden;
-        background: linear-gradient(to right, #f8f9fa, #fff);
-        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
-    }
-
-    .custom-services .service-box.reverse {
-        flex-direction: row-reverse;
-    }
-
-    .custom-services .service-img img {
-        object-fit: cover;
-        height: 100%;
-    }
-
-    .custom-services .service-content {
-        background: linear-gradient(to bottom right, #003b95, #007bff);
-        height: 100%;
-        border-radius: 0.75rem;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-        color: #fff;
-        min-height: 300px;
-    }
+.custom-services .service-content {
+    background: linear-gradient(to bottom right, #003b95, #007bff);
+    height: 100%;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    color: #fff;
+    min-height: 300px;
+}
