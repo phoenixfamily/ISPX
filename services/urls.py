@@ -11,7 +11,7 @@ router.register(r'api/services', ServicesViewSet, basename='services')
 
 urlpatterns = [
                   path("<int:pk>/", services_view, name='services_view'),
-                  path("<int:pk>/", update_services_view, name='update_services_view'),
+                  path("update/<int:pk>/", update_services_view, name='update_services_view'),
 
               ] + router.urls
 
