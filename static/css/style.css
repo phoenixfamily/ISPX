@@ -494,7 +494,6 @@ body.dark-mode {
 .custom-services .service-content {
     background: linear-gradient(to bottom right, #003b95, #007bff);
     height: 100%;
-    border-radius: 0.75rem;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     color: #fff;
     min-height: 300px;
