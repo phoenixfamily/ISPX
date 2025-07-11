@@ -135,10 +135,10 @@ body.dark-mode {
         max-height: 320px;
     }
 }
-
 .service-box {
   display: flex;
   min-height: 400px;
+  height: 400px; /* ارتفاع ثابت برای کل باکس */
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
@@ -148,7 +148,7 @@ body.dark-mode {
 .service-img,
 .service-content {
   flex: 1 1 50%;
-  height: auto;
+  height: 400px; /* ارتفاع ثابت */
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -166,6 +166,7 @@ body.dark-mode {
   justify-content: center;
   padding: 2rem;
   background-color: transparent;
+  color: white; /* چون متن سفید می‌خوای */
 }
 
 .content-wrapper {
