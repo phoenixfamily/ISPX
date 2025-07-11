@@ -52,28 +52,28 @@
 {% endblock %}
 
 {% block content %}
-
 <section class="custom-services py-5">
   <div class="container-fluid px-lg-5">
     {% for service in services %}
-      <div class="service-box d-flex flex-wrap align-items-stretch mb-5 {% if forloop.counter|divisibleby:2 %}reverse{% endif %}">
+      <div class="service-box d-flex flex-wrap align-items-stretch mb-5 {% if forloop.counter|divisibleby:2 %}flex-row-reverse{% endif %}">
+
         <!-- تصویر -->
-        <div class="service-img col-md-6">
-          <img src="/media/{{ service.image }}" alt="{{ service.title }}" class="img-fluid w-100 h-100 object-fit-cover rounded-start">
+        <div class="service-img">
+          <img src="/media/{{ service.image }}" alt="{{ service.title }}" class="img-fluid">
         </div>
 
         <!-- محتوا -->
-        <div class="service-content col-md-6 text-white p-4 d-flex flex-column justify-content-between rounded-end">
-          <div>
+        <div class="service-content text-white p-4">
+          <div class="content-wrapper">
             <h3 class="fw-bold mb-3">{{ service.title }}</h3>
             <p>{{ service.description|truncatewords:80 }}</p>
           </div>
         </div>
+
       </div>
     {% endfor %}
   </div>
 </section>
-
 
 
 
