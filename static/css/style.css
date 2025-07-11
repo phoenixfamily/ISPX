@@ -137,7 +137,8 @@ body.dark-mode {
 }
 
 .service-box {
-    background: linear-gradient(to bottom right, #ea0000, #007bff);
+    /*background: linear-gradient(to bottom right, #003b95, #007bff);*/
+    background-color: black;
     display: flex;
     flex-wrap: wrap;
     min-height: 400px;
@@ -173,8 +174,7 @@ body.dark-mode {
     height: 100%;
     object-fit: cover;
     border-radius: 0;
-}
-
+    }
     .dry-wash-section {
         background: #f9faff;
     }
