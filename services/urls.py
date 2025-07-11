@@ -7,7 +7,7 @@ from .views import *
 app_name = 'services'
 
 router = DefaultRouter()
-router.register(r'api/services', ServicesViewSet, name='services')
+router.register(r'api/services', ServicesViewSet, basename='services')
 
 urlpatterns = [
                   path("<int:pk>/", services_view, name='services_view'),

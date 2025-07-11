@@ -45,7 +45,6 @@
     document.getElementById("serviceUpdateForm").addEventListener("submit", function (e) {
         e.preventDefault();
 
-        const id = document.getElementById("serviceId").value;
         const title = document.getElementById("title").value;
         const description = document.getElementById("description").value;
         const category = document.getElementById("category").value;
@@ -58,7 +57,7 @@
         if (category) formData.append("categories", category);
         if (image) formData.append("image", image);
 
-        fetch(`{% url 'services:services' %}`, {
+        fetch(`/api/service/update/{{ service.id }}/`, {
             method: "PATCH",
             headers: {
                 "X-CSRFToken": getCookie("csrftoken")
