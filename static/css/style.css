@@ -137,7 +137,7 @@ body.dark-mode {
 }
 
 .service-box {
-    background: linear-gradient(to bottom right, #003b95, #007bff);
+    background: linear-gradient(to bottom right, #ea0000, #007bff);
     display: flex;
     flex-wrap: wrap;
     min-height: 400px;
