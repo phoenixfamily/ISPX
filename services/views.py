@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.shortcuts import get_object_or_404
 from django.template import loader
 
 from category.models import Category
@@ -16,6 +17,15 @@ def services_view(request, pk):
     context = {
         'category': category,
         'services': services
+    }
+    return HttpResponse(template.render(context, request))
+
+
+def update_services_view(request, pk):
+    template = loader.get_template('update-services.html')
+    service = get_object_or_404(Services, pk=pk)
+    context = {
+        'service': service
     }
     return HttpResponse(template.render(context, request))
 

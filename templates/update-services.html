@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Service</title>
+
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="mb-4">Update Service</h2>
+    <form id="serviceUpdateForm">
+
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" placeholder="{{ service.title }}">
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" id="description" rows="4"
+                      placeholder="{{ service.description }}"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="image" class="form-label">Image (optional)</label>
+            <input type="file" class="form-control" id="image">
+        </div>
+
+        <div class="mb-3">
+            <label for="category" class="form-label">Category ID</label>
+            <input type="number" class="form-control" id="category" placeholder="{{ service.category.id }}">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update Service</button>
+    </form>
+
+    <div id="updateMessage" class="mt-4"></div>
+</div>
+
+<script>
+    document.getElementById("serviceUpdateForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const id = document.getElementById("serviceId").value;
+        const title = document.getElementById("title").value;
+        const description = document.getElementById("description").value;
+        const category = document.getElementById("category").value;
+        const image = document.getElementById("image").files[0];
+
+        const formData = new FormData();
+
+        if (title) formData.append("title", title);
+        if (description) formData.append("description", description);
+        if (category) formData.append("categories", category);
+        if (image) formData.append("image", image);
+
+        fetch(`{% url 'services:services' %}`, {
+            method: "PATCH",
+            headers: {
+                "X-CSRFToken": getCookie("csrftoken")
+            },
+            body: formData,
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Something went wrong.");
+                }
+                return response.json();
+            })
+            .then(data => {
+                document.getElementById("updateMessage").innerHTML =
+                    `<div class="alert alert-success">Service updated successfully!</div>`;
+            })
+            .catch(error => {
+                document.getElementById("updateMessage").innerHTML =
+                    `<div class="alert alert-danger">Error: ${error.message}</div>`;
+            });
+    });
+
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== "") {
+            const cookies = document.cookie.split(";");
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Match cookie name
+                if (cookie.substring(0, name.length + 1) === name + "=") {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+</script>
+
+
+</body>
+</html>
