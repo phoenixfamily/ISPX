@@ -57,7 +57,7 @@
         if (category) formData.append("categories", category);
         if (image) formData.append("image", image);
 
-        fetch(`/services/api/service/{{ service.id }}/`, {
+        fetch(`/services/api/services/{{ service.id }}/`, {
             method: "PATCH",
             headers: {
                 "X-CSRFToken": getCookie("csrftoken")
