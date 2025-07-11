@@ -58,7 +58,7 @@
                 <!-- لوگو -->
                 <a class="navbar-brand d-flex align-items-center gap-2" href="{% url 'home:view' %}">
                     <img src="{% static 'images/simple-logo.png' %}" alt="IranianShiningPhoenix" height="40">
-                    <span class="fw-bold text-primary fs-5 d-inline d-lg-inline">IranianShiningPhoenix</span>
+                    <span class="fw-bold text-primary fs-5">IranianShiningPhoenix</span>
 
                 </a>
 
@@ -79,58 +79,61 @@
 </div>
 
 <footer class="footer bg-dark text-white pt-5 pb-4">
-  <div class="container">
-    <div class="row">
+    <div class="container">
+        <div class="row">
 
-      <!-- Logo + Description -->
-      <div class="col-md-4 mb-4">
-          <a class="navbar-brand d-flex align-items-center gap-2" href="{% url 'home:view' %}">
+            <!-- Logo + Description -->
+            <div class="col-md-4 mb-4">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="{% url 'home:view' %}">
                     <img src="{% static 'images/simple-logo.png' %}" alt="IranianShiningPhoenix" height="40">
                     <span class="fw-bold text-primary fs-5 d-none d-lg-inline">IranianShiningPhoenix</span>
 
-          </a>
-        <p class="small">
-          Specialized in aircraft cleaning, detailing, and maintenance. We deliver eco-friendly and high-quality services trusted by global airlines.
-        </p>
-      </div>
+                </a>
+                <p class="small">
+                    Specialized in aircraft cleaning, detailing, and maintenance. We deliver eco-friendly and
+                    high-quality services trusted by global airlines.
+                </p>
+            </div>
 
-      <!-- Quick Links -->
-      <div class="col-md-2 mb-4">
-        <h6 class="fw-bold mb-3">Quick Links</h6>
-        <ul class="list-unstyled">
-          <li><a href="{% url 'home:view' %}" class="footer-link">Home</a></li>
-          <li><a href="#" class="footer-link">Services</a></li>
-            <li><a href="{% url 'product:view' %}" class="footer-link">Products</a></li>
-            <li><a href="{% url 'contact:view' %}" class="footer-link">Contact us</a></li>
-          <li><a href="{% url 'about:view' %}" class="footer-link">About us</a></li>
-        </ul>
-      </div>
+            <!-- Quick Links -->
+            <div class="col-md-2 mb-4">
+                <h6 class="fw-bold mb-3">Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'home:view' %}" class="footer-link">Home</a></li>
+                    <li><a href="#" class="footer-link">Services</a></li>
+                    <li><a href="{% url 'product:view' %}" class="footer-link">Products</a></li>
+                    <li><a href="{% url 'contact:view' %}" class="footer-link">Contact us</a></li>
+                    <li><a href="{% url 'about:view' %}" class="footer-link">About us</a></li>
+                </ul>
+            </div>
 
-      <!-- Contact Info -->
-      <div class="col-md-3 mb-4">
-        <h6 class="fw-bold mb-3">Contact</h6>
-        <p class="mb-1"><i class="fa fa-envelope me-2"></i>info@iraniashiningphoenix.com</p>
-        <p><i class="fa fa-map-marker-alt me-2"></i>Tehran Airport Area, Iran</p>
-      </div>
+            <!-- Contact Info -->
+            <div class="col-md-3 mb-4">
+                <h6 class="fw-bold mb-3">Contact</h6>
+                <p class="mb-1"><i class="fa fa-envelope me-2"></i>info@iraniashiningphoenix.com</p>
+                <p><i class="fa fa-map-marker-alt me-2"></i>Tehran Airport Area, Iran</p>
+            </div>
 
-      <!-- Social Media -->
-      <div class="col-md-3 mb-4">
-        <h6 class="fw-bold mb-3">Follow Us</h6>
-        <div class="d-flex gap-3">
-          <a href="" class="social-icon"><i class="fab fa-instagram"></i></a>
-          <a href="//linkedin.com/company/phoenixfamily" class="social-icon"><i class="fab fa-linkedin"></i></a>
-          <a href="//wa.link/eai49n" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-          <a href="//telegram.me/iranianshiningphoenix" class="social-icon"><i class="fab fa-telegram"></i></a>
+            <!-- Social Media -->
+            <div class="col-md-3 mb-4">
+                <h6 class="fw-bold mb-3">Follow Us</h6>
+                <div class="d-flex gap-3">
+                    <a href="" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="//linkedin.com/company/phoenixfamily" class="social-icon"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="//wa.link/eai49n" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    <a href="//telegram.me/iranianshiningphoenix" class="social-icon"><i
+                            class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+
         </div>
-      </div>
 
+        <!-- Copyright -->
+        <div class="text-center pt-4 border-top mt-4" style="border-color: rgba(255,255,255,0.1) !important;">
+            <p class="small mb-0">&copy; 2025 PhoenixFamily Co. All Rights Reserved.</p>
+        </div>
     </div>
-
-    <!-- Copyright -->
-    <div class="text-center pt-4 border-top mt-4" style="border-color: rgba(255,255,255,0.1) !important;">
-      <p class="small mb-0">&copy; 2025 PhoenixFamily Co. All Rights Reserved.</p>
-    </div>
-  </div>
 </footer>
 
 </body>
