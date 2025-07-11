@@ -118,6 +118,16 @@ body.dark-mode {
     border-left: 4px solid #0d6efd;
 }
 
+
+.gorund-box {
+  display: flex;
+  min-height: 400px;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(to bottom right, #003b95, #007bff);
+}
+
 .carousel img {
     height: 100%;
     max-height: 480px;
