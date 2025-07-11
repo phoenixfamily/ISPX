@@ -13,7 +13,7 @@ from ISPX.permissions import IsSuperUser
 def services_view(request, pk):
     template = loader.get_template('services.html')
     category = Category.objects.all()
-    services = Services.objects.filter(categories=pk)
+    services = Services.objects.filter(categories=pk).order_by('id')
     context = {
         'category': category,
         'services': services
