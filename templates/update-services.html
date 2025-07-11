@@ -32,7 +32,7 @@
 
         <div class="mb-3">
             <label for="category" class="form-label">Category ID</label>
-            <input type="number" class="form-control" id="category" placeholder="{{ service.category.id }}">
+            <input type="number" class="form-control" id="category" placeholder="{{ service.category }}">
         </div>
 
         <button type="submit" class="btn btn-primary">Update Service</button>
@@ -57,7 +57,7 @@
         if (category) formData.append("categories", category);
         if (image) formData.append("image", image);
 
-        fetch(`/api/service/update/{{ service.id }}/`, {
+        fetch(`/services/api/service/update/{{ service.id }}/`, {
             method: "PATCH",
             headers: {
                 "X-CSRFToken": getCookie("csrftoken")
