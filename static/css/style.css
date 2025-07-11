@@ -148,7 +148,7 @@ body.dark-mode {
 .service-img,
 .service-content {
   flex: 1 1 50%;
-  height: 400px; /* ارتفاع ثابت */
+  height: 3500px; /* ارتفاع ثابت */
   display: flex;
   justify-content: center;
   align-items: stretch;
