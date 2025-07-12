@@ -35,7 +35,7 @@ class CooperationRequest(models.Model):
     task_cabin = models.BooleanField("Cabin Deep Cleaning", default=False)
     task_exterior = models.BooleanField("Exterior Cleaning", default=False)
 
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 
     def __str__(self):
         return f"Request {self.ac_type} - {self.date}"

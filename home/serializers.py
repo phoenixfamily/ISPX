@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Slider, CEO
+from .models import Slider, CEO, CooperationRequest
 
 
 class SliderSerializer(serializers.ModelSerializer):
@@ -11,4 +11,10 @@ class SliderSerializer(serializers.ModelSerializer):
 class CeoSerializer(serializers.ModelSerializer):
     class Meta:
         model = CEO
+        fields = '__all__'
+
+
+class CooperationRequestSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CooperationRequest
         fields = '__all__'
