@@ -26,12 +26,18 @@ from rest_framework.authtoken.views import obtain_auth_token
 from about.views import *
 from contact.views import *
 from products.views import *
+from seo.sitemaps import StaticViewSitemap
+from services.sitemaps import ServiceSitemap
 from services.views import *
 from category.views import *
 from home.views import *
 from ISPX import settings
 
 
+sitemaps = {
+    'static': StaticViewSitemap(),
+    'services': ServiceSitemap(),
+}
 urlpatterns = [
 
     path('', RedirectView.as_view(url='/home/', permanent=True)),

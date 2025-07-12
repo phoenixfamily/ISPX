@@ -58,7 +58,8 @@ ALLOWED_HOSTS = [
     '127.0.0.1'
     'www.iranianshiningphoenix.com',
     'iranianshiningphoenix.com',
-    'phoenixfamily.ir'
+    'iranianshiningphoenix',
+    'www.iranianshiningphoenix.ir',
 
 ]
 
@@ -133,21 +134,20 @@ DATABASES = {
 
 SEO = {
     'default': {
-        'title': _('Phoenix Family | Board Games, Entertainment Apps & More!'),
+        'title': _('IranianShiningPhoenix | Specialized in aircraft cleaning, detailing, and maintenance.'),
         'description': _(
-            'Discover Phoenix Family – your ultimate destination for family entertainment! From online entertainment to'
-            ' entertainment apps and best board games for adults, fun awaits!'),
+            'We deliver eco-friendly and high-quality services trusted by global airlines.'),
         'keywords': [
-            _('phoenix family'),
-            _('family entertainment'),
-            _('entertainment online'),
-            _('entertainment apps'),
-            _('family board games'),
-            _('board game online'),
-            _('board game apps'),
-            _('game apps'),
-            _('best entertainment apps'),
-            _('best board games for adults'),
+            _('IranianShiningPhoenix'),
+            _('aircraft maintenance services'),
+            _('airplane cleaning services'),
+            _('aircraft dry wash'),
+            _('aircraft polishing services'),
+            _('aviation ground services'),
+            _('aviation detailing services'),
+            _('aircraft services in Iran'),
+            _('Tehran aviation services'),
+            _('airport ground services Middle East'),
         ],
         'robots': 'index, follow',  # یا 'noindex, nofollow' برای جلوگیری از ایندکس
     }
