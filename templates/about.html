@@ -10,30 +10,33 @@
 {% block header %}
 
     <!-- آیتم‌های منو -->
-    <div class="collapse navbar-collapse" id="navbarNav">
+     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'home:view' %}">Home</a>
+                <a class="nav-link" href="{% url 'home:home-view' %}">Home</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
-                <ul class="dropdown-menu">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false">
+                    Services
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     {% for x in category %}
-                        {% if x.type == "services" %}
-                            <li><a class="dropdown-item" href="{% url 'services:services_view' x.id %}">{{ x.name }}</a>
-                            </li>
-                        {% endif %}
+                        <li><a class="dropdown-item" href="{% url 'services:services_view' x.id %}">{{ x.name }}</a>
+                        </li>
                     {% endfor %}
                 </ul>
             </li>
+
+
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'product:view' %}">Products</a>
+                <a class="nav-link" href="{% url 'product:product-view' %}">Products</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="{% url 'contact:view' %}">Contact us</a>
+                <a class="nav-link" href="{% url 'contact:contact-view' %}">Contact us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="{% url 'about:view' %}">About us</a>
+                <a class="nav-link active" href="{% url 'about:about-view' %}">About us</a>
             </li>
         </ul>
     </div>

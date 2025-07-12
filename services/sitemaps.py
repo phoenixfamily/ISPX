@@ -13,4 +13,4 @@ class ServiceSitemap(Sitemap):
         return Services.objects.all()  # فقط محصولات فعال رو بگیر
 
     def location(self, item):
-        return reverse('services:view', args=[item.id])  # اگه از ID استفاده می‌کنی
+        return reverse('services:services-view', args=[item.id])  # اگه از ID استفاده می‌کنی

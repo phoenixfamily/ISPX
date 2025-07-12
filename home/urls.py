@@ -6,6 +6,7 @@ from .views import *
 
 
 app_name = 'home'
+
 router = DefaultRouter()
 router.register(r'slider', SliderViewSet)
 router.register(r'CEO', CeoViewSet)
@@ -14,7 +15,7 @@ router.register(r'cooperation', CooperationRequestViewSet)
 
 
 urlpatterns = [
-    path("", home_view, name='view'),
+    path("", home_view, name='home-view'),
     path("api/", include(router.urls)),
 
 ]

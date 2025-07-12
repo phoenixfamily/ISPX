@@ -16,7 +16,7 @@ router.register(r'Certificate', CertificateView, basename='Certificate')
 
 urlpatterns = [
     path('api/', include(router.urls)),
-    path("", about_view, name='view'),
+    path("", about_view, name='about-view'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -51,13 +51,13 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(
-    path('about/', include('about.urls', namespace='about')),  # مسیر URLهای اپلیکیشن About
-    path('category/', include('category.urls', namespace='category')),  # مسیر URLهای اپلیکیشن Blog
-    path('contact/', include('contact.urls', namespace='contact')),  # مسیر URLهای اپلیکیشن Contact
-    path('home/', include('home.urls', namespace='home')),  # مسیر URLهای اپلیکیشن Home
-    path('services/', include('services.urls', namespace='services')),  # مسیر URLهای اپلیکیشن Services
-    path('products/', include('products.urls', namespace='products')),  # مسیر URLهای اپلیکیشن Product
-    path('auth/', include('services.urls', namespace='services')),  # مسیر URLهای اپلیکیشن Authentication
+    path('about/', include('about.urls', namespace='about'), name='about'),  # مسیر URLهای اپلیکیشن About
+    path('category/', include('category.urls', namespace='category'), name='category'),  # مسیر URLهای اپلیکیشن Blog
+    path('contact/', include('contact.urls', namespace='contact'), name='contact'),  # مسیر URLهای اپلیکیشن Contact
+    path('home/', include('home.urls', namespace='home'), name='home'),  # مسیر URLهای اپلیکیشن Home
+    path('services/', include('services.urls', namespace='services'),name='services' ),  # مسیر URLهای اپلیکیشن Services
+    path('products/', include('products.urls', namespace='products'), name='products'),  # مسیر URLهای اپلیکیشن Product
+    path('auth/', include('services.urls', namespace='services'), name='services'),  # مسیر URLهای اپلیکیشن Authentication
 
 )
 

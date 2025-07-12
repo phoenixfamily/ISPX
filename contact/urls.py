@@ -11,7 +11,7 @@ router.register(r'contact', ContactFormViewSet)
 
 urlpatterns = [
 
-    path("", contact_view, name='view'),
+    path("", contact_view, name='contact-view'),
     path("api/", include(router.urls)),
 
 ]

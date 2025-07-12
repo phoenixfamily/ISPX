@@ -12,13 +12,13 @@
 {% block header %}
 
     <!-- آیتم‌های منو -->
-    <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'home:view' %}">Home</a>
+                <a class="nav-link" href="{% url 'home:home-view' %}">Home</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button"
                    data-bs-toggle="dropdown" aria-expanded="false">
                     Services
                 </a>
@@ -32,13 +32,13 @@
 
 
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'product:view' %}">Products</a>
+                <a class="nav-link" href="{% url 'product:product-view' %}">Products</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'contact:view' %}">Contact us</a>
+                <a class="nav-link" href="{% url 'contact:contact-view' %}">Contact us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'about:view' %}">About us</a>
+                <a class="nav-link" href="{% url 'about:about-view' %}">About us</a>
             </li>
         </ul>
     </div>
