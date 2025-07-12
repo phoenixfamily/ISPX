@@ -52,7 +52,7 @@
                 <div class="col-lg-6 d-flex">
                     <div class="form-wrapper bg-white shadow rounded p-4 w-100">
                         <h3 class="mb-4 text-primary fw-bold">Cooperation Request</h3>
-                        <form id="cooperation-form" method="post" >
+                        <form id="cooperation-form" method="POST" enctype="multipart/form-data" >
                                 {% csrf_token %}
                             <div class="mb-3">
                                 <label for="acType" class="form-label">A/C TYPE</label>
