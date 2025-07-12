@@ -3,7 +3,6 @@ from django.http import HttpResponse
 from rest_framework.views import APIView
 
 from category.models import Category
-from .forms import CooperationRequestForm
 from .models import Slider, CEO, CooperationRequest
 from .serializers import SliderSerializer, CeoSerializer, CooperationRequestSerializer
 from django.template import loader
@@ -117,3 +116,4 @@ class CeoViewSet(viewsets.ModelViewSet):
 class CooperationRequestViewSet(viewsets.ModelViewSet):
     queryset = CooperationRequest.objects.all()
     serializer_class = CooperationRequestSerializer
+

@@ -52,7 +52,7 @@
                 <div class="col-lg-6 d-flex">
                     <div class="form-wrapper bg-white shadow rounded p-4 w-100">
                         <h3 class="mb-4 text-primary fw-bold">Cooperation Request</h3>
-                        <form method="post" action="api/cooperation/" enctype="multipart/form-data">
+                        <form id="cooperation-form" method="post">
                             {% csrf_token %}
                             <div class="mb-3">
                                 <label for="acType" class="form-label">A/C TYPE</label>
@@ -486,33 +486,33 @@
 
 
 <script>
-    document.querySelector("form").addEventListener("submit", function (e) {
-        e.preventDefault();
-        let form = this;
-        let formData = new FormData(form);
-        let csrfToken = form.querySelector('[name=csrfmiddlewaretoken]').value;
+document.getElementById('cooperation-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
 
-        fetch("{% url 'home:cooperation' %}", {
-            method: "POST",
-            body: formData,
+    const form = e.target;
+    const formData = new FormData(form);
+
+    try {
+        const response = await fetch('api/cooperation/', {
+            method: 'POST',
             headers: {
-                "X-CSRFToken": csrfToken
+                'X-CSRFToken': formData.get('csrfmiddlewaretoken')
             },
-        })
-            .then(response => response.json())
-            .then(data => {
-                if (data.message) {
-                    alert(data.message);
-                    form.reset(); // فرم پاک بشه بعد ارسال موفق
-                } else if (data.errors) {
-                    alert("Form Errors: " + JSON.stringify(data.errors));
-                } else {
-                    alert("Error: " + JSON.stringify(data.error));
-                }
-            })
-            .catch(error => console.error("Error:", error));
-    });
+            body: formData
+        });
 
+        if (response.ok) {
+            alert('Thanks! Your request was submitted successfully. ✅');
+            form.reset();
+        } else {
+            const errorData = await response.json();
+            alert('Error❌  ' + JSON.stringify(errorData));
+        }
+    } catch (err) {
+        console.error(err);
+        alert('Something went wrong. Please try again later. ⚠️');
+    }
+});
 </script>
 
 
