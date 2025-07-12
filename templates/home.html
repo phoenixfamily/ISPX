@@ -52,8 +52,8 @@
                 <div class="col-lg-6 d-flex">
                     <div class="form-wrapper bg-white shadow rounded p-4 w-100">
                         <h3 class="mb-4 text-primary fw-bold">Cooperation Request</h3>
-                        <form id="cooperation-form" method="POST" enctype="multipart/form-data" >
-                                {% csrf_token %}
+                        <form id="cooperation-form" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
                             <div class="mb-3">
                                 <label for="acType" class="form-label">A/C TYPE</label>
                                 <input type="text" class="form-control" id="acType" name="ac_type" required>
@@ -486,36 +486,36 @@
 
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function () {
 
-    document.getElementById('cooperation-form').addEventListener('submit',function(e) {
-        e.preventDefault();
+        document.getElementById("cooperation-form").addEventListener("submit", function (e) {
+            e.preventDefault();
 
-        let formData = new FormData(this);
+            let formData = new FormData(this);
 
 
-        try {
-            const response = fetch('api/cooperation/', {
-               method: "POST",
-                body: formData,
-                headers: {
-                    "X-CSRFToken": "{{ csrf_token }}"
-                },
-            });
+            try {
+                const response = fetch('{api/cooperation/}', {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "X-CSRFToken": "{{ csrf_token }}"
+                    },
+                });
 
-            if (response.ok) {
-                alert('Thanks! Your request was submitted successfully. ✅');
-                this.reset();
-            } else {
-                const errorData = response.json();
-                alert('Error❌  ' + JSON.stringify(errorData));
+                if (response.ok) {
+                    alert('Thanks! Your request was submitted successfully. ✅');
+                    this.reset();
+                } else {
+                    const errorData = response.json();
+                    alert('Error❌  ' + JSON.stringify(errorData));
+                }
+            } catch (err) {
+                console.error(err);
+                alert('Something went wrong. Please try again later. ⚠️');
             }
-        } catch (err) {
-            console.error(err);
-            alert('Something went wrong. Please try again later. ⚠️');
-        }
+        });
     });
-});
 </script>
 
 
