@@ -50,7 +50,7 @@
                 <div class="col-lg-6">
                     <div class="contact-form shadow p-4 p-md-5 bg-white rounded h-100">
                         <h5 class="mb-4 fw-bold text-primary">Send Us a Message</h5>
-                        <form method="post">
+                         <form method="post" action="api/contact/" enctype="multipart/form-data">
                             {% csrf_token %}
                             <div class="mb-3">
                                 <label for="name" class="form-label">Full Name</label>

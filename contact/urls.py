@@ -1,16 +1,18 @@
+from django.conf import settings
 from django.conf.urls.static import static
-from django.urls import path
-
-from ISPX import settings
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 from .views import *
 
-
 app_name = 'contact'
+
+router = DefaultRouter()
+router.register(r'contact', ContactFormViewSet)
 
 urlpatterns = [
 
     path("", contact_view, name='view'),
-    path('api/', EmailView.as_view(), name='email'),
+    path("api/", include(router.urls)),
 
 ]
 
