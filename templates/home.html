@@ -99,7 +99,7 @@
                             </div>
 
                             <div class="d-grid">
-                                <button type="submit" class="btn btn-primary btn-lg">Send</button>
+                                <button id="submit" type="submit" class="btn btn-primary btn-lg">Send</button>
                             </div>
                         </form>
                     </div>
@@ -486,15 +486,15 @@
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', async function () {
 
-        document.getElementById("cooperation-form").addEventListener("submit", function (e) {
+        document.getElementById("cooperation-form").addEventListener("submit", async function (e) {
             e.preventDefault();
 
             let formData = new FormData(this);
 
             try {
-                const response = fetch('{% url 'home:cooperation' %}', {
+                const response = await fetch('{% url 'home:cooperation' %}', {
                     method: "POST",
                     body: formData,
                     headers: {
