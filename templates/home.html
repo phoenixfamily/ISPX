@@ -494,7 +494,7 @@
             let formData = new FormData(this);
 
             try {
-                const response = fetch('/api/cooperation/', {
+                const response = fetch('{% url 'home:cooperation' %}', {
                     method: "POST",
                     body: formData,
                     headers: {

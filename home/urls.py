@@ -10,13 +10,13 @@ app_name = 'home'
 router = DefaultRouter()
 router.register(r'slider', SliderViewSet)
 router.register(r'CEO', CeoViewSet)
-router.register(r'cooperation', CooperationRequestViewSet)
 
 
 
 urlpatterns = [
     path("", home_view, name='home-view'),
     path("api/", include(router.urls)),
+    path("api/cooperation/", CooperationRequestViewSet.as_view({'post': 'create'}), name="cooperation"),
 
 ]
 
