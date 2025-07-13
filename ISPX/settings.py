@@ -84,6 +84,8 @@ INSTALLED_APPS = [
     'seo',
     'bootstrap5',
     'django_filters',
+    'django.contrib.sitemaps',
+
 ]
 
 MIDDLEWARE = [
