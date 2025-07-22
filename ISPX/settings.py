@@ -39,9 +39,9 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 
-DOMAIN = 'iranianshiningphoenix.com/'
+DOMAIN = 'iranianshiningphoenix.ir/'
 SITE_NAME = 'IranianShiningPhoenix'
-SITE_URL = "https://www.iranianshiningphoenix.com/"
+SITE_URL = "https://www.iranianshiningphoenix.ir/"
 
 SITE_ID = 1
 
@@ -50,7 +50,7 @@ META_USE_OG_PROPERTIES = True
 META_USE_TWITTER_PROPERTIES = True
 META_USE_SCHEMAORG_PROPERTIES = True
 
-CSRF_TRUSTED_ORIGINS = ["https://iranianshiningphoenix.com", "https://www.iranianshiningphoenix.com"]
+CSRF_TRUSTED_ORIGINS = ["https://iranianshiningphoenix.ir", "https://www.iranianshiningphoenix.ir"]
 
 ALLOWED_HOSTS = [
     '188.121.121.81',
@@ -58,7 +58,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1'
     'www.iranianshiningphoenix.com',
     'iranianshiningphoenix.com',
-    'iranianshiningphoenix',
+    'iranianshiningphoenix.ir',
     'www.iranianshiningphoenix.ir',
 
 ]
