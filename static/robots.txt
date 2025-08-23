@@ -1,4 +1,5 @@
 User-agent: *
-Disallow:
-
-Sitemap: https://iranianshiningphoenix.com/sitemap.xml
+Disallow: /admin/
+Disallow: /*?q=
+Allow: /
+Sitemap: https://iranianshiningphoenix.ir/sitemap.xml

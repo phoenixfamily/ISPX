@@ -1,64 +1,51 @@
-"""
-URL configuration for IranianShiningPhoenix project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
+# ISPX/urls.py
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.contrib.flatpages import sitemaps
 from django.contrib.sitemaps.views import sitemap
-from django.urls import path, include
+from django.urls import path, include, reverse_lazy
 from django.views.generic import RedirectView
 from django.views.i18n import set_language
-from about.views import *
-from contact.views import *
-from products.views import *
+
 from seo.sitemaps import StaticViewSitemap
 from services.sitemaps import ServiceSitemap
-from services.views import *
-from category.views import *
-from home.views import *
 from ISPX import settings
 
+# اگر flatpages استفاده نمی‌کنی، ایمپورت ماژول sitemaps از flatpages رو حذف کن
 
-sitemaps = {
+sitemaps_dict = {   # اسم دیکشنری رو عوض کردیم
     'static': StaticViewSitemap(),
     'services': ServiceSitemap(),
 }
-urlpatterns = [
 
-    path('', RedirectView.as_view(url='/home/', permanent=True)),
+urlpatterns = [
+    # ریدایرکت ریشه به نام URL صفحه خانه (فرض: در home.urls نام 'home:index' داری)
+    path('', RedirectView.as_view(url=reverse_lazy('home:index'), permanent=True), name='root'),
 
     path('api-auth/', include('rest_framework.urls')),
+    path('admin/', admin.site.urls),
 
-    path('admin/', admin.site.urls),  # مسیر پنل ادمین
-    path('set_language/', set_language, name='set_language'),  # به جای include از set_language استفاده کنید
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
+    # تغییر زبان (POST)
+    path('set_language/', set_language, name='set_language'),
+
+    # سایت‌مپ
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps_dict}, name='sitemap'),
 
 ]
 
 urlpatterns += i18n_patterns(
-    path('about/', include('about.urls', namespace='about'), name='about'),  # مسیر URLهای اپلیکیشن About
-    path('category/', include('category.urls', namespace='category'), name='category'),  # مسیر URLهای اپلیکیشن Blog
-    path('contact/', include('contact.urls', namespace='contact'), name='contact'),  # مسیر URLهای اپلیکیشن Contact
-    path('home/', include('home.urls', namespace='home'), name='home'),  # مسیر URLهای اپلیکیشن Home
-    path('services/', include('services.urls', namespace='services'),name='services' ),  # مسیر URLهای اپلیکیشن Services
-    path('products/', include('products.urls', namespace='products'), name='products'),  # مسیر URLهای اپلیکیشن Product
-    path('auth/', include('services.urls', namespace='services'), name='services'),  # مسیر URLهای اپلیکیشن Authentication
-
+    path('home/', include(('home.urls', 'home'), namespace='home')),
+    path('about/', include(('about.urls', 'about'), namespace='about')),
+    path('category/', include(('category.urls', 'category'), namespace='category')),
+    path('contact/', include(('contact.urls', 'contact'), namespace='contact')),
+    path('services/', include(('services.urls', 'services'), namespace='services')),
+    path('products/', include(('products.urls', 'products'), namespace='products')),
+    # اگر auth داری:
+    # path('auth/', include(('accounts.urls', 'accounts'), namespace='accounts')),
+    prefix_default_language=False,  # پیشنهاد: زبان پیش‌فرض بدون پیشوند
 )
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+# فقط در DEBUG:
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -6,7 +6,7 @@ from .models import Services
 
 class ServiceSitemap(Sitemap):
     changefreq = "daily"  # بسته به به‌روزرسانی سایت، می‌تونی تنظیمش کنی
-    priority = 0.9  # اهمیت صفحه برای گوگل
+    priority = 0.8  # اهمیت صفحه برای گوگل
     protocol = 'https'  # اگر سایتت SSL داره
 
     def items(self):

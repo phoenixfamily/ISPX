@@ -3,8 +3,10 @@ from django.urls import reverse
 
 
 class StaticViewSitemap(Sitemap):
-    priority = 0.8
-    changefreq = 'monthly'
+    priority = 0.9
+    changefreq = "daily"  # بسته به به‌روزرسانی سایت، می‌تونی تنظیمش کنی
+    protocol = 'https'  # اگر سایتت SSL داره
+
 
     def items(self):
         return [

@@ -65,6 +65,7 @@ SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")  # برای فور
 # Application definition
 
 INSTALLED_APPS = [
+    "modeltranslation",  # باید قبل از اپ‌های دیتای خودت بیاد
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -109,6 +110,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',  # فعال‌سازی پردازشگر i18n
+                'seo.context_processors.seo_context',  # افزودن این خط
+
             ],
         },
     },
@@ -223,7 +227,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # برای ترجمه‌ها
 LOCALE_PATHS = [
-    BASE_DIR / 'locale',
+    BASE_DIR / "locale",
 ]
 
 # فایل‌های استاتیک (CSS, JS, Images)

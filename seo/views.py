@@ -1,3 +1,14 @@
-from django.shortcuts import render
+from rest_framework import viewsets
 
-# Create your views here.
+from seo.models import SEOPage, Keyword
+from seo.serializers import SEOPageSerializer, KeyWordSerializer
+
+
+class SEOPageView(viewsets.ModelViewSet):
+    queryset = SEOPage.objects.all()
+    serializer_class = SEOPageSerializer
+
+
+class KeywordView(viewsets.ModelViewSet):
+    queryset = Keyword.objects.all()
+    serializer_class = KeyWordSerializer

@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-23 20:36+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+#: .\ISPX\settings.py:137
+msgid ""
+"IranianShiningPhoenix | Specialized in aircraft cleaning, detailing, and "
+"maintenance."
+msgstr "ققنوس درخشان ایرانیان | متخصص در شست‌وشو، دیتیلینگ و نگهداری هواپیما"
+
+#: .\ISPX\settings.py:139
+msgid ""
+"We deliver eco-friendly and high-quality services trusted by global airlines."
+msgstr "ما خدماتی سازگار با محیط زیست و با کیفیت بالا ارائه می‌دهیم که مورد اعتماد ایرلاین‌های جهانی است."
+
+#: .\ISPX\settings.py:141
+msgid "IranianShiningPhoenix"
+msgstr "ققنوس درخشان ایرانیان"
+
+#: .\ISPX\settings.py:142
+msgid "aircraft maintenance services"
+msgstr "خدمات نگهداری هواپیما"
+
+#: .\ISPX\settings.py:143
+msgid "airplane cleaning services"
+msgstr "خدمات تمیز کردن هواپیما"
+
+#: .\ISPX\settings.py:144
+msgid "aircraft dry wash"
+msgstr "خدمات شست‌وشوی هواپیما"
+
+#: .\ISPX\settings.py:145
+msgid "aircraft polishing services"
+msgstr "خدمات پولیش هواپیما"
+
+#: .\ISPX\settings.py:146
+msgid "aviation ground services"
+msgstr "خدمات زمینی هواپیمایی"
+
+#: .\ISPX\settings.py:147
+msgid "aviation detailing services"
+msgstr "خدمات دیتیلینگ هواپیما"
+
+#: .\ISPX\settings.py:148
+msgid "aircraft services in Iran"
+msgstr "خدمات هواپیما در ایران"
+
+#: .\ISPX\settings.py:149
+msgid "Tehran aviation services"
+msgstr "خدمات هواپیما در تهران"
+
+#: .\ISPX\settings.py:150
+msgid "airport ground services Middle East"
+msgstr "خدمات زمینی فرودگاهی در خاورمیانه"
+
+#: .\ISPX\settings.py:208
+msgid "English"
+msgstr "انگلیسی"
+
+#: .\ISPX\settings.py:209
+msgid "Persian"
+msgstr "فارسی"
