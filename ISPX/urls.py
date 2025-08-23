@@ -40,6 +40,8 @@ urlpatterns += i18n_patterns(
     path('contact/', include(('contact.urls', 'contact'), namespace='contact')),
     path('services/', include(('services.urls', 'services'), namespace='services')),
     path('products/', include(('products.urls', 'products'), namespace='products')),
+    path('seo/', include(('seo.urls', 'seo'), namespace='seo')),
+
     # اگر auth داری:
     # path('auth/', include(('accounts.urls', 'accounts'), namespace='accounts')),
     prefix_default_language=False,  # پیشنهاد: زبان پیش‌فرض بدون پیشوند

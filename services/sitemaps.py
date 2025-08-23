@@ -5,7 +5,7 @@ from django.urls import reverse
 from .models import Services
 
 class ServiceSitemap(Sitemap):
-    changefreq = "daily"  # بسته به به‌روزرسانی سایت، می‌تونی تنظیمش کنی
+    changefreq = "monthly"
     priority = 0.8  # اهمیت صفحه برای گوگل
     protocol = 'https'  # اگر سایتت SSL داره
 
