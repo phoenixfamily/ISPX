@@ -11,7 +11,7 @@
 {% block header %}
 
     <!-- آیتم‌های منو -->
-     <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'home:home-view' %}">Home</a>
@@ -82,7 +82,7 @@
                             </div>
                             <div class="mb-4">
                                 <label for="file" class="form-label">Attachment (optional)</label>
-                                <input type="file" class="form-control" id="file" name="attachment">
+                                <input type="file" class="form-control" id="file" name="file">
                             </div>
 
                             <button type="submit" class="btn btn-primary w-100">Send Message</button>
@@ -94,16 +94,20 @@
                 <div class="col-lg-6">
                     <div class="contact-info p-4 p-md-5 bg-white shadow rounded h-100">
                         <h5 class="mb-4 fw-bold text-primary">Contact Information</h5>
-                        <p class="mb-3"><i class="fa fa-envelope me-2 text-danger"></i> info@iraniashiningphoenix.com</p>
+                        <p class="mb-3"><i class="fa fa-envelope me-2 text-danger"></i> info@iraniashiningphoenix.com
+                        </p>
                         <p class="mb-4"><i class="fa fa-map-marker-alt me-2 text-warning"></i> Tehran Airport Area, Iran
                         </p>
 
                         <h6 class="fw-semibold mt-4 mb-3">Follow us:</h6>
                         <div class="d-flex gap-3">
                             <a href="#" class="social-icon bg-instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="//linkedin.com/company/phoenixfamily" class="social-icon bg-linkedin"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="//telegram.me/iranianshiningphoenix" class="social-icon bg-telegram"><i class="fab fa-telegram-plane"></i></a>
-                            <a href="//wa.link/eai49n" class="social-icon bg-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="//linkedin.com/company/phoenixfamily" class="social-icon bg-linkedin"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                            <a href="//telegram.me/iranianshiningphoenix" class="social-icon bg-telegram"><i
+                                    class="fab fa-telegram-plane"></i></a>
+                            <a href="//wa.link/eai49n" class="social-icon bg-whatsapp"><i
+                                    class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
@@ -117,35 +121,34 @@
 
 
 <script>
+    document.getElementById('contact-form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
 
-document.getElementById('contact-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
+        try {
+            const response = await fetch('/api/email/', {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': formData.get('csrfmiddlewaretoken')
+                },
+                body: formData
+            });
 
-    const form = e.target;
-    const formData = new FormData(form);
-
-    try {
-        const response = await fetch('api/contact/', {
-            method: 'POST',
-            headers: {
-                'X-CSRFToken': formData.get('csrfmiddlewaretoken')
-            },
-            body: formData
-        });
-
-        if (response.ok) {
-            alert('Thanks! Your request was submitted successfully. ✅');
-            form.reset();
-        } else {
-            const errorData = await response.json();
-            alert('Error❌  ' + JSON.stringify(errorData));
+            if (response.ok) {
+                alert('Thanks! Your request was submitted successfully. ✅');
+                form.reset();
+            } else {
+                const errorData = await response.json().catch(() => ({}));
+                alert('Error❌  ' + (errorData && Object.keys(errorData).length ? JSON.stringify(errorData) : 'Unknown error'));
+            }
+        } catch (err) {
+            console.error(err);
+            alert('Something went wrong. Please try again later. ⚠️');
         }
-    } catch (err) {
-        console.error(err);
-        alert('Something went wrong. Please try again later. ⚠️');
-    }
-});
+    });
 </script>
+
 
 </body>
 </html>

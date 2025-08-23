@@ -486,37 +486,44 @@
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', async function () {
+    document.getElementById('cooperation-form').addEventListener('submit', async function (e) {
+        e.preventDefault();
 
-        document.getElementById("cooperation-form").addEventListener("submit", async function (e) {
-            e.preventDefault();
+        const form = e.target;
+        const btn = form.querySelector('#submit');
+        const fd = new FormData(form); // شامل csrfmiddlewaretoken هم می‌شود
 
-            let formData = new FormData(this);
+        btn.disabled = true;
 
-            try {
-                const response = await fetch('{% url 'home:cooperation' %}', {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        "X-CSRFToken": "{{ csrf_token }}"
-                    },
-                });
+        try {
+            const res = await fetch('/api/cooperation/', {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': fd.get('csrfmiddlewaretoken')
+                },
+                body: fd
+            });
 
-                if (response.ok) {
-                    alert('Thanks! Your request was submitted successfully. ✅');
-                    this.reset();
-                } else {
-                    const errorData = response.json();
-                    alert('Error❌  ' + JSON.stringify(errorData));
+            if (res.ok) {
+                alert('Your request was submitted. ✅');
+                form.reset();
+            } else {
+                let data;
+                try {
+                    data = await res.json();
+                } catch {
+                    data = {};
                 }
-            } catch (err) {
-                console.error(err);
-                alert('Something went wrong. Please try again later. ⚠️');
+                alert('Error ❌ ' + (data.error || JSON.stringify(data.errors || {})));
             }
-        });
+        } catch (err) {
+            console.error(err);
+            alert('Network error. Please try again later. ⚠️');
+        } finally {
+            btn.disabled = false;
+        }
     });
 </script>
-
 
 </body>
 </html>

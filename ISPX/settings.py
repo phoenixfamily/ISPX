@@ -56,8 +56,6 @@ ALLOWED_HOSTS = [
     '188.121.121.81',
     'localhost',
     '127.0.0.1'
-    'www.iranianshiningphoenix.com',
-    'iranianshiningphoenix.com',
     'iranianshiningphoenix.ir',
     'www.iranianshiningphoenix.ir',
 
@@ -228,14 +226,7 @@ LOCALE_PATHS = [
     BASE_DIR / 'locale',
 ]
 
-# فایل‌های استاتیک (CSS, JS, Images)
-STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")  # فولدر نهایی برای nginx
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
-# فایل‌های رسانه‌ای که کاربر آپلود می‌کنه
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
@@ -243,8 +234,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'mail.iranianshiningphoenix.com'
-EMAIL_PORT = 465  # پورت SMTP
+EMAIL_HOST = 'mail.iranianshiningphoenix.ir'
+EMAIL_PORT = 587  # پورت SMTP
 EMAIL_USE_TLS = False  # TLS غیرفعال است
 EMAIL_USE_SSL = True  # SSL فعال است
 EMAIL_HOST_USER = 'customer@iranianshiningphoenix.com'

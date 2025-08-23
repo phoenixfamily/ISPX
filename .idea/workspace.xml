@@ -52,7 +52,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
-    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR_AND_PREVIEW&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;ignore_missing_gitignore&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/abbas/PycharmProjects/ISPX/static/images&quot;,
@@ -62,7 +62,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -135,7 +135,15 @@
       <workItem from="1752173341981" duration="42078000" />
       <workItem from="1752346328735" duration="4268000" />
       <workItem from="1752372022132" duration="5262000" />
-      <workItem from="1753146428753" duration="9691000" />
+      <workItem from="1753146428753" duration="11775000" />
+      <workItem from="1753239609790" duration="6050000" />
+      <workItem from="1753303377494" duration="325000" />
+      <workItem from="1753373203892" duration="2867000" />
+      <workItem from="1753549866810" duration="1897000" />
+      <workItem from="1753989481381" duration="2874000" />
+      <workItem from="1754646742694" duration="38000" />
+      <workItem from="1754895324441" duration="72000" />
+      <workItem from="1755854935854" duration="3656000" />
     </task>
     <servers />
   </component>

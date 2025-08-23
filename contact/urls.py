@@ -6,13 +6,11 @@ from .views import *
 
 app_name = 'contact'
 
-router = DefaultRouter()
-router.register(r'contact', ContactFormViewSet)
 
 urlpatterns = [
 
     path("", contact_view, name='contact-view'),
-    path("api/", include(router.urls)),
+    path("api/email/", EmailView.as_view(), name='email-view'),
 
 ]
 
