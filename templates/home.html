@@ -484,46 +484,49 @@
 
 {% endblock %}
 
-
 <script>
-    document.getElementById('cooperation-form').addEventListener('submit', async function (e) {
-        e.preventDefault();
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('cooperation-form');
+        if (!form) return;
 
-        const form = e.target;
-        const btn = form.querySelector('#submit');
-        const fd = new FormData(form); // شامل csrfmiddlewaretoken هم می‌شود
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
 
-        btn.disabled = true;
+            const btn = form.querySelector('#submit');
+            const fd = new FormData(form);
+            btn.disabled = true;
 
-        try {
-            const res = await fetch('{% url 'home:cooperation' %}', {
-                method: 'POST',
-                headers: {
-                    'X-CSRFToken': fd.get('csrfmiddlewaretoken')
-                },
-                body: fd
-            });
+            console.log("test")
 
-            if (res.ok) {
-                alert('Your request was submitted. ✅');
-                form.reset();
-            } else {
-                let data;
-                try {
-                    data = await res.json();
-                } catch {
-                    data = {};
+            try {
+                const res = await fetch('{% url "home:cooperation" %}', {
+                    method: 'POST',
+                    headers: {'X-CSRFToken': fd.get('csrfmiddlewaretoken')},
+                    body: fd,
+                    credentials: 'same-origin'   // حتماً اضافه کن
+                });
+
+                if (res.ok) {
+                    alert('Your request was submitted. ✅');
+                    form.reset();
+                } else {
+                    let data = {};
+                    try {
+                        data = await res.json();
+                    } catch {
+                    }
+                    alert('Error ❌ ' + (data.error || JSON.stringify(data.errors || {})));
                 }
-                alert('Error ❌ ' + (data.error || JSON.stringify(data.errors || {})));
+            } catch (err) {
+                console.error(err);
+                alert('Network error. Please try again later. ⚠️');
+            } finally {
+                btn.disabled = false;
             }
-        } catch (err) {
-            console.error(err);
-            alert('Network error. Please try again later. ⚠️');
-        } finally {
-            btn.disabled = false;
-        }
+        });
     });
 </script>
+
 
 </body>
 </html>
