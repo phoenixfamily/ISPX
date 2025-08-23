@@ -139,3 +139,36 @@
     </script>
 
 {% endblock %}
+
+
+{% block extra_head %}
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Iranian Shining Phoenix",
+         "url": "https://iranianshiningphoenix.ir/",
+          "logo": "https://iranianshiningphoenix.ir/static/images/logo.jpg",
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "contactType": "customer service",
+              "areaServed": "IR",
+              "availableLanguage": ["fa","en"]
+            },
+            {
+              "@type": "ContactPoint",
+              "contactType": "sales",
+              "areaServed": "IR",
+              "availableLanguage": ["fa","en"]
+            }
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Tehran Airport Area, Iran",
+            "addressLocality": "Tehran",
+            "addressCountry": "IR"
+          }
+        }
+    </script>
+{% endblock %}

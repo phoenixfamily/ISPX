@@ -126,3 +126,28 @@
 </section>
 
 {% endblock %}
+
+{% block extra_head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Iranian Shining Phoenix",
+  "url": "https://iranianshiningphoenix.ir/",
+  "logo": "https://iranianshiningphoenix.ir/static/images/logo.jpg",
+  "description": "Iranian Shining Phoenix is a trusted aviation services company in Iran and the Middle East, specializing in eco-friendly aircraft cleaning, detailing, maintenance, and parts supply.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Tehran Airport Area, Iran",
+    "addressLocality": "Tehran",
+    "addressCountry": "IR"
+  },
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "areaServed": "IR",
+    "availableLanguage": ["en","fa"]
+  }]
+}
+</script>
+{% endblock %}

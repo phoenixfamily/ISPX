@@ -506,3 +506,36 @@
     </script>
 
 {% endblock %}
+
+
+{% block extra_head %}
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Iranian Shining Phoenix",
+          "url": "https://iranianshiningphoenix.ir/",
+          "logo": "https://iranianshiningphoenix.ir/static/images/logo.jpg",
+          "contactPoint": [{
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "areaServed": "IR",
+            "availableLanguage": ["fa","en"]
+          }]
+        }
+    </script>
+
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "url": "https://iranianshiningphoenix.ir/",
+          "name": "Iranian Shining Phoenix",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://example.com/search/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+    </script>
+{% endblock %}

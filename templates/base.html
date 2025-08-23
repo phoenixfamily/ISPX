@@ -18,7 +18,8 @@
     <meta name="robots" content="index, follow">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="icon" href="{% static 'images/logo.jpg' %}" type="image/x-icon">
-    <link rel="canonical" href="{{ canonical_url }}">
+   {% if canonical_url %}<link rel="canonical" href="{{ canonical_url }}">{% endif %}
+
     <meta property="og:title" content="{{ seo_title }}">
     <meta property="og:description" content="{{ seo_description }}">
     <meta property="og:image" content="{% static 'images/logo.jpg' %}">
@@ -29,6 +30,9 @@
 
 
     <script src="https://kit.fontawesome.com/1228ed801f.js" crossorigin="anonymous"></script>
+
+  {% block extra_head %}{% endblock %}
+
 
     <style>
 
