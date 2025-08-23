@@ -496,7 +496,7 @@
         btn.disabled = true;
 
         try {
-            const res = await fetch('/cooperation/', {
+            const res = await fetch('{% url 'home:cooperation' %}', {
                 method: 'POST',
                 headers: {
                     'X-CSRFToken': fd.get('csrfmiddlewaretoken')
