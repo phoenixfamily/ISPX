@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from rest_framework.views import APIView
 
 from category.models import Category
+from .forms import CooperationForm
 from .models import Slider, CEO, CooperationRequest
 from .serializers import SliderSerializer, CeoSerializer, CooperationRequestSerializer
 from django.template import loader
