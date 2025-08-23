@@ -481,46 +481,37 @@
     </section>
 
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const form = document.getElementById('cooperation-form');
-        if (!form) return;
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('cooperation-form').addEventListener('submit', async function (e) {
+                e.preventDefault();
+                const form = e.target;
+                const formData = new FormData(form);
 
-        form.addEventListener('submit', async function (e) {
-            e.preventDefault();
 
-            const btn = form.querySelector('#submit');
-            const fd = new FormData(form);
-            btn.disabled = true;
+                try {
+                    const response = await fetch('{% url "home:cooperation" %}', {
+                        method: 'POST',
+                        headers: {
+                            'X-CSRFToken': formData.get('csrfmiddlewaretoken')
+                        },
+                        body: formData
+                    });
 
-            try {
-                const res = await fetch('{% url "home:cooperation" %}', {
-                    method: 'POST',
-                    headers: {'X-CSRFToken': fd.get('csrfmiddlewaretoken')},
-                    body: fd,
-                    credentials: 'same-origin'
-                });
-
-                if (res.ok) {
-                    alert('Your request was submitted. ✅');
-                    form.reset();
-                } else {
-                    let data = {};
-                    try {
-                        data = await res.json();
-                    } catch {
+                    if (response.ok) {
+                        alert('Your request was submitted. ✅');
+                        form.reset();
+                    } else {
+                        const errorData = await response.json().catch(() => ({}));
+                        alert('Error❌  ' + (errorData && Object.keys(errorData).length ? JSON.stringify(errorData) : 'Unknown error'));
                     }
-                    alert('Error ❌ ' + (data.error || JSON.stringify(data.errors || {})));
+                } catch (err) {
+                    console.error(err);
+                    alert('Network error. Please try again later. ⚠️');
                 }
-            } catch (err) {
-                console.error(err);
-                alert('Network error. Please try again later. ⚠️');
-            } finally {
-                btn.disabled = false;
-            }
+            });
         });
-    });
-</script>
+    </script>
 
 {% endblock %}
 </body>
