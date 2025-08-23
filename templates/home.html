@@ -482,7 +482,6 @@
 
 
 
-{% endblock %}
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -495,8 +494,6 @@
             const btn = form.querySelector('#submit');
             const fd = new FormData(form);
             btn.disabled = true;
-
-            console.log("test")
 
             try {
                 const res = await fetch('{% url "home:cooperation" %}', {
@@ -527,6 +524,6 @@
     });
 </script>
 
-
+{% endblock %}
 </body>
 </html>
