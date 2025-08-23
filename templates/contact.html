@@ -1,13 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load i18n %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title></title>
-</head>
-<body>
 
+{% block title %}Contact Us{% endblock %}
 {% block header %}
 
     <!-- آیتم‌های منو -->
@@ -116,36 +110,33 @@
         </div>
     </section>
 
-<script>
-    document.getElementById('contact-form').addEventListener('submit', async function (e) {
-        e.preventDefault();
-        const form = e.target;
-        const formData = new FormData(form);
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
 
-        try {
-            const response = await fetch('{% url 'contact:email' %}', {
-                method: 'POST',
-                headers: {
-                    'X-CSRFToken': formData.get('csrfmiddlewaretoken')
-                },
-                body: formData
-            });
+            try {
+                const response = await fetch('{% url 'contact:email' %}', {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': formData.get('csrfmiddlewaretoken')
+                    },
+                    body: formData
+                });
 
-            if (response.ok) {
-                alert('Thanks! Your request was submitted successfully. ✅');
-                form.reset();
-            } else {
-                const errorData = await response.json().catch(() => ({}));
-                alert('Error❌  ' + (errorData && Object.keys(errorData).length ? JSON.stringify(errorData) : 'Unknown error'));
+                if (response.ok) {
+                    alert('Thanks! Your request was submitted successfully. ✅');
+                    form.reset();
+                } else {
+                    const errorData = await response.json().catch(() => ({}));
+                    alert('Error❌  ' + (errorData && Object.keys(errorData).length ? JSON.stringify(errorData) : 'Unknown error'));
+                }
+            } catch (err) {
+                console.error(err);
+                alert('Something went wrong. Please try again later. ⚠️');
             }
-        } catch (err) {
-            console.error(err);
-            alert('Something went wrong. Please try again later. ⚠️');
-        }
-    });
-</script>
+        });
+    </script>
 
 {% endblock %}
-
-</body>
-</html>
