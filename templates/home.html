@@ -481,8 +481,6 @@
     </section>
 
 
-
-
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const form = document.getElementById('cooperation-form');
@@ -500,7 +498,7 @@
                     method: 'POST',
                     headers: {'X-CSRFToken': fd.get('csrfmiddlewaretoken')},
                     body: fd,
-                    credentials: 'same-origin'   // حتماً اضافه کن
+                    credentials: 'same-origin'
                 });
 
                 if (res.ok) {
