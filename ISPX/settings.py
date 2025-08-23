@@ -241,12 +241,12 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'mail.iranianshiningphoenix.ir'
-EMAIL_PORT = 587  # پورت SMTP
-EMAIL_USE_TLS = False  # TLS غیرفعال است
-EMAIL_USE_SSL = True  # SSL فعال است
-EMAIL_HOST_USER = 'customer@iranianshiningphoenix.com'
-EMAIL_HOST_PASSWORD = 'coH;4f@BSKY+'
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "mail.iranianshiningphoenix.ir"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_HOST_USER = "customer@iranianshiningphoenix.ir"
+EMAIL_HOST_PASSWORD = "coH;4f@BSKY+"
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-COMPANY_EMAIL = 'ceo@iranianshiningphoenix.com'
+COMPANY_EMAIL = "ceo@iranianshiningphoenix.ir"
