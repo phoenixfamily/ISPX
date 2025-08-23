@@ -54,7 +54,7 @@ CSRF_TRUSTED_ORIGINS = ["https://iranianshiningphoenix.ir", "https://www.iranian
 ALLOWED_HOSTS = [
     '188.121.121.81',
     'localhost',
-    '127.0.0.1'
+    '127.0.0.1',
     'iranianshiningphoenix.ir',
     'www.iranianshiningphoenix.ir',
 

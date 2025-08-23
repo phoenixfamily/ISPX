@@ -22,7 +22,6 @@ from django.contrib.sitemaps.views import sitemap
 from django.urls import path, include
 from django.views.generic import RedirectView
 from django.views.i18n import set_language
-from rest_framework.authtoken.views import obtain_auth_token
 from about.views import *
 from contact.views import *
 from products.views import *
