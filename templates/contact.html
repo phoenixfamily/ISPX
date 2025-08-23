@@ -123,7 +123,7 @@
         const formData = new FormData(form);
 
         try {
-            const response = await fetch('/api/email/', {
+            const response = await fetch('{% url 'contact:email' %}', {
                 method: 'POST',
                 headers: {
                     'X-CSRFToken': formData.get('csrfmiddlewaretoken')
