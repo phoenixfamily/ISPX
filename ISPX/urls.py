@@ -20,7 +20,7 @@ sitemaps_dict = {   # اسم دیکشنری رو عوض کردیم
 
 urlpatterns = [
     # ریدایرکت ریشه به نام URL صفحه خانه (فرض: در home.urls نام 'home:index' داری)
-    path('', RedirectView.as_view(url=reverse_lazy('home:index'), permanent=True), name='root'),
+    path('', RedirectView.as_view(url=reverse_lazy('home:home-view'), permanent=True), name='root'),
 
     path('api-auth/', include('rest_framework.urls')),
     path('admin/', admin.site.urls),
